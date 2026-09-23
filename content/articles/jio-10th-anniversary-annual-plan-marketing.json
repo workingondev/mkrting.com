@@ -1,0 +1,58 @@
+{
+  "slug": "jio-10th-anniversary-annual-plan-marketing",
+  "title": "How Jio turned its tenth anniversary into an annual-plan story",
+  "seo_title": "Jio 10th Anniversary Offer: Annual Plan Marketing Analysis",
+  "seo_description": "An evidence-led look at Jio's 2026 anniversary annual-plan offer, its monthly voucher mechanic and the retention hypothesis behind the bundle.",
+  "reader_question": "What marketing role does Jio's tenth-anniversary annual plan play?",
+  "dek": "A milestone supplies the occasion. A year-long plan and redeemable benefits supply the reasons to keep returning to the brand's app.",
+  "kind": "Brand strategy",
+  "category": "India",
+  "brand": "Jio",
+  "hero_image": "/assets/jio-anniversary-bundle.png",
+  "hero_alt": "Original diagram of a 365-day Jio plan followed by twelve monthly benefit moments",
+  "hero_caption": "Original mkrting.com interpretation of the offer structure, not Jio campaign art.",
+  "published": "2026-09-23",
+  "updated": "2026-09-23",
+  "read_minutes": 5,
+  "signal": "Jio packages a 365-day recharge with monthly data and content entitlements plus partner coupons.",
+  "lesson": "A milestone can make an existing commitment easier to explain when the added benefits have a clear redemption path.",
+  "sections": [
+    {
+      "heading": "What the offer actually says",
+      "paragraphs": [
+        "Jio's official terms describe a ₹3,599 annual-plan promotion for its tenth anniversary, beginning 4 September 2026 and continuing until Jio withdraws it. The underlying plan has 365-day validity. The listed anniversary benefits include twelve 10 GB data vouchers, twelve monthly JioTV content packs, and coupons for EaseMyTrip, AJIO and Cinépolis. Gadgets 360 reported the anniversary launch separately.",
+        "The data vouchers must be redeemed manually in MyJio and each is valid for 30 days from redemption. Partner discounts have their own eligibility, spending and expiry rules. A headline ‘up to’ value is therefore not the same as cash value for every subscriber. We use the official terms for these details because secondary summaries may omit conditions or list benefits differently."
+      ]
+    },
+    {
+      "heading": "The marketing hypothesis",
+      "paragraphs": [
+        "The anniversary gives Jio a timely reason to talk about an annual commitment. The bundle then stretches the message beyond the recharge day: monthly benefits and app-based redemption create recurring occasions to encounter MyJio. This is our interpretation of the offer design, not a stated internal objective or proven retention effect.",
+        "The partner coupons also place Jio in more everyday contexts than telecom alone. That can make a bundle feel broader, but only if subscribers understand and use the benefits. Complicated terms can weaken a marketing promise even when the stated total value looks large."
+      ]
+    },
+    {
+      "heading": "What the sources cannot prove",
+      "paragraphs": [
+        "The terms establish the offer structure and conditions. They do not show whether customers upgraded because of the anniversary, how many redeemed vouchers, or whether annual-plan retention improved. Those questions require Jio's customer and cohort data, which are not available in the cited sources.",
+        "Because Jio can change or withdraw the promotion, anyone making a purchase decision should check the current terms directly. This article analyses the marketing mechanic; it is not a comparison of telecom plans."
+      ]
+    },
+    {
+      "heading": "A useful version for a smaller brand",
+      "paragraphs": [
+        "Use an anniversary only if it explains a meaningful customer benefit. An annual-plan promotion could pair one clear recurring benefit with an easy redemption experience, then measure whether customers actually use it. A long list of partner coupons is less useful if few people qualify."
+      ],
+      "bullets": [
+        "State the base product and the promotional extras separately.",
+        "Show the real conditions next to the headline value.",
+        "Track activation and redemption before claiming that a bundle improves retention."
+      ]
+    }
+  ],
+  "sources": [
+    {"label": "Jio official ₹3,599 anniversary offer terms", "url": "https://www.jio.com/en-in/jio-3599-annual-offer-terms-and-conditions/", "type": "Primary terms"},
+    {"label": "Gadgets 360 report on the anniversary plan", "url": "https://www.gadgets360.com/telecom/news/reliance-jio-10th-anniversary-prepaid-plan-launch-price-benefits-validity-12011381/amp", "type": "Independent reporting"}
+  ],
+  "disclosure": "AI-assisted research and original mkrting.com analysis. Offer details follow Jio's linked terms; this prelaunch draft awaits final editorial approval and a terms recheck."
+}

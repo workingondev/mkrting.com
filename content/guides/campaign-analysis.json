@@ -1,0 +1,67 @@
+{
+  "slug": "campaign-analysis",
+  "title": "How to analyse a marketing campaign",
+  "seo_title": "How to Analyse a Marketing Campaign: Evidence-First Template",
+  "dek": "A practical worksheet for finding the audience insight, brand role, creative decision and evidence behind an advertisement—without confusing attention with results.",
+  "published": "2026-09-23",
+  "updated": "2026-09-23",
+  "sections": [
+    {
+      "heading": "1. Save the original work",
+      "paragraphs": [
+        "Start with the brand's film, campaign page, product page or credited agency release. Save the URL, publication date and exact version you reviewed. An industry article or an Instagram roundup can alert you to a campaign, but it may leave out the full creative, the intended audience or the brand's own explanation.",
+        "Write down what is directly visible before you interpret it. Who appears? What happens first? Which product feature or promise is shown? What is the final call to action? This makes later claims easier to check."
+      ],
+      "questions": ["What is the original creative URL?", "Which details are visible in the work itself?"]
+    },
+    {
+      "heading": "2. Identify the problem the brand may be solving",
+      "paragraphs": [
+        "Look for the market situation: a new product, a crowded category, a misconception, a seasonal moment or a change in customer behaviour. State the likely communication problem as a hypothesis unless the brand or agency has published the brief. A campaign can be striking without solving the right problem.",
+        "Separate the business outcome a brand might want from the message it can actually communicate. Awareness, consideration, trial and retention call for different evidence."
+      ],
+      "questions": ["What changed in the category or customer context?", "Is the objective stated by a source or inferred by you?"]
+    },
+    {
+      "heading": "3. Locate the audience tension",
+      "paragraphs": [
+        "Ask what a specific audience already believes, notices, overlooks or finds frustrating. A useful tension is more precise than 'people want convenience'. It explains why the message might be relevant to this audience now. Check that the ad's setting, language, casting and product demonstration actually support your proposed reading.",
+        "If the audience is not named by a reliable source, describe the people shown or addressed in the work rather than inventing a demographic profile."
+      ],
+      "questions": ["Who is the work visibly speaking to?", "What belief or behaviour does the creative try to change?"]
+    },
+    {
+      "heading": "4. Explain the brand's role",
+      "paragraphs": [
+        "Find the product truth or brand association that connects the story to the advertiser. A story can be entertaining yet interchangeable with a competitor. Ask whether removing the brand would break the central idea. If the product only appears at the end, explain what gives the brand permission to claim the message.",
+        "In our Zomato analysis, the strategic reading is that a subscription turns a one-off food order into a deliberate daily routine. The official product page supports the visible feature details; the strategic interpretation is ours."
+      ],
+      "questions": ["What distinctive role does this brand or product play?", "Could a competitor use the same idea unchanged?"]
+    },
+    {
+      "heading": "5. Describe the creative mechanism",
+      "paragraphs": [
+        "Describe how the campaign carries its message: a demonstration, contrast, character, joke, symbol, repeated line, visual identity or cultural reference. Name the sequence that makes the idea understandable. This is more useful than calling an ad 'emotional' or 'innovative' without explaining why.",
+        "Consider where the viewer encounters the work. A short social clip, outdoor poster and long film have different constraints. Do not assume the same edit ran on every channel without evidence."
+      ],
+      "questions": ["Which creative choice makes the product point clear?", "How does the format shape that choice?"]
+    },
+    {
+      "heading": "6. Test the outcome claims",
+      "paragraphs": [
+        "Keep three columns: what is observed, what a source reports, and what remains unknown. A public view count describes exposure on one platform; it does not prove recall, preference, sales or profit. Treat awards, shares and press coverage as different kinds of evidence, each with limits.",
+        "If the brand publishes a study, record who conducted it, sample, period, comparison and metric. If those details are missing, do not promote the number into a claim of effectiveness. An honest 'outcome unknown' is more useful than a confident guess."
+      ],
+      "questions": ["Which results can be verified independently?", "What cannot be concluded from the public data?"]
+    },
+    {
+      "heading": "7. Extract a transferable lesson",
+      "paragraphs": [
+        "Finish with one principle another team can use without copying the execution. It might be 'make an invisible benefit visible through a familiar moment', not 'use a motorcycle traffic scene'. Specify the condition under which the principle applies and one inexpensive way to test it.",
+        "A strong analysis has a clear limit. Say whether the evidence demonstrates the creative choice, the audience reaction or a business result. Those are different conclusions."
+      ],
+      "questions": ["What would a smaller team try?", "What evidence would show whether that test worked?"]
+    }
+  ],
+  "example_article": "zomato-healthy-subscriptions-product-marketing"
+}

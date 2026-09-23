@@ -1,0 +1,58 @@
+{
+  "slug": "zomato-healthy-subscriptions-product-marketing",
+  "title": "Zomato's Healthy Subscriptions make the product the marketing",
+  "seo_title": "Zomato Healthy Subscriptions: Product Marketing Strategy Explained",
+  "seo_description": "How Zomato's Healthy Subscriptions turn planned meals, flexibility and Healthy Mode into a repeat-use proposition. Original analysis with primary sources.",
+  "reader_question": "What is the marketing strategy behind Zomato's Healthy Subscriptions?",
+  "dek": "The feature moves the promise from finding one healthy meal to making repeat ordering easier across an ordinary week.",
+  "kind": "Product marketing",
+  "category": "India",
+  "brand": "Zomato",
+  "hero_image": "/assets/zomato-meal-routine.png",
+  "hero_alt": "Original five-day meal-plan diagram representing Zomato's repeat-use subscription idea",
+  "hero_caption": "Original mkrting.com strategy diagram, not Zomato product artwork.",
+  "published": "2026-09-23",
+  "updated": "2026-09-23",
+  "read_minutes": 5,
+  "signal": "Zomato turns a health-oriented discovery feature into a planned, repeat-use meal experience.",
+  "lesson": "When repeat behaviour is the goal, design the repeat action into the product rather than relying only on reminders.",
+  "sections": [
+    {
+      "heading": "What Zomato built",
+      "paragraphs": [
+        "In May 2026, Zomato introduced Healthy Subscriptions within Healthy Mode. The company says customers can choose lunch or dinner plans lasting 3, 5 or 15 days from selected restaurants, and edit or reschedule meals, update an address or cancel under the platform's terms. Zomato listed Delhi, Mumbai and Bangalore as the launch cities; current availability should be checked in the app.",
+        "The subscription menu contains dishes assigned a ‘High’ Healthy Score by Zomato's own framework. Zomato says the nutritional insights are AI-generated from information available on its platform and supplied by restaurants. That score is a product label, not independent medical certification or a promise that a dish is right for every person."
+      ]
+    },
+    {
+      "heading": "The strategic move",
+      "paragraphs": [
+        "A single healthy order solves a decision once. A flexible meal plan offers to solve that decision repeatedly. Our interpretation is that Zomato is marketing a routine, not just a category: fewer daily choices, familiar restaurants and the option to change plans when a real week changes.",
+        "The flexibility matters to the positioning. If a subscription felt rigid, it could contradict the convenience that draws people to food delivery. Making edits and rescheduling part of the feature helps the product carry the promise that the marketing communicates."
+      ]
+    },
+    {
+      "heading": "The demand signal, with limits",
+      "paragraphs": [
+        "In September 2026, Business Standard reported Zomato marketing head Sahibjeet Singh Sawhney's statement that healthy dishes accounted for 7.5% of orders in 2026, compared with 5.3% in 2024. The same report said Healthy Mode users showed repeat ordering. These are company-reported figures in an interview; they are useful context for the broader healthy-food opportunity, not proof that Healthy Subscriptions caused the change.",
+        "The cited sources do not give subscription sign-ups, completion rates, incremental orders or unit economics. They also do not establish that the app's AI-generated scores independently verify nutrition. We cannot call the subscription a commercial success on the available evidence."
+      ]
+    },
+    {
+      "heading": "A useful version for a smaller brand",
+      "paragraphs": [
+        "Look for a task customers repeat and the friction that makes them abandon it. Build a way to plan that task once, but leave room to change the plan. Then measure completed repeats and cancellations, not just initial enrolments."
+      ],
+      "bullets": [
+        "Define the recurring job in the customer's own words.",
+        "Make edits and exits clear before asking for a commitment.",
+        "Separate adoption of the feature from evidence that it improved customer outcomes."
+      ]
+    }
+  ],
+  "sources": [
+    {"label": "Zomato official Healthy Subscriptions launch", "url": "https://www.zomato.com/blog/introducing-healthy-subscriptions-on-zomato/", "type": "Primary product announcement"},
+    {"label": "Business Standard interview on healthy-order trends, 8 September 2026", "url": "https://www.business-standard.com/companies/news/zomato-s-healthy-food-orders-rise-to-7-5-as-younger-users-drive-adoption-126090801035_1.html", "type": "Independent reporting"}
+  ],
+  "disclosure": "AI-assisted research and original mkrting.com analysis. Facts were checked against the linked sources; this prelaunch draft awaits final editorial approval."
+}

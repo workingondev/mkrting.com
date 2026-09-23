@@ -1,0 +1,59 @@
+{
+  "slug": "swiggy-brand-repositioning-platform-marketing",
+  "title": "How Swiggy is repositioning from delivery app to daily habit platform",
+  "seo_title": "Swiggy Brand Strategy 2026: From Food Delivery to Everyday Platform",
+  "seo_description": "An evidence-led look at how Swiggy's Instamart, Snacc, dining-out and food delivery combine into a single platform positioning story in 2026.",
+  "reader_question": "What is the brand strategy behind Swiggy's move beyond food delivery in 2026?",
+  "dek": "Swiggy is not rebranding its app — it is arguing that the same app belongs in more moments of a customer's day.",
+  "kind": "Brand strategy",
+  "category": "India",
+  "brand": "Swiggy",
+  "hero_image": "/assets/swiggy-platform-strategy.png",
+  "hero_alt": "Original diagram showing Swiggy's four consumer touchpoints across a single day: food, groceries, dining and quick snacks",
+  "hero_caption": "Original mkrting.com strategy diagram. Not Swiggy brand material.",
+  "published": "2026-09-23",
+  "updated": "2026-09-23",
+  "read_minutes": 5,
+  "signal": "Swiggy groups food delivery, quick commerce, dining-out and a snacking vertical under one app identity.",
+  "lesson": "If your product already serves one daily habit, the lowest-cost growth move is often expanding into adjacent moments without launching a separate brand.",
+  "sections": [
+    {
+      "heading": "What Swiggy has built",
+      "paragraphs": [
+        "Swiggy's current app combines food delivery, Instamart quick commerce (targeting 10-minute grocery and essentials delivery), Dineout restaurant discovery and table booking, and Snacc — a snacking-focused vertical launched in early 2026. Each vertical targets a different meal or consumption moment. Swiggy's investor filings and public announcements describe this as a 'platform of platforms' approach rather than a single-service business.",
+        "Swiggy's IPO prospectus, filed in 2024 and listed on the NSE and BSE, describes monthly transacting users and gross order value across these verticals separately. The prospectus is the primary source for aggregate figures; individual vertical performance data beyond that filing is not reproduced here from secondary summaries that may not have reviewed the original document."
+      ]
+    },
+    {
+      "heading": "The strategic move",
+      "paragraphs": [
+        "The core brand argument Swiggy is making — across app UX, marketing and investor communications — is that a single logged-in user identity should cover food, groceries, dining and snacks. This lowers the cost of acquiring a new-category customer versus building a standalone app for each need. Our reading is that the positioning strategy is primarily about increasing order frequency per user rather than growing the total user base.",
+        "The Snacc launch is the most visible recent signal of this direction. By targeting a high-frequency, low-consideration purchase (snacks and beverages), Swiggy can increase weekly touchpoints with existing users. A customer who uses Instamart twice a week and orders food once becomes a three-session user, raising the economic value of keeping that person inside the Swiggy ecosystem. This is our interpretation of the commercial logic; Swiggy has not published a per-vertical cost-of-acquisition comparison."
+      ]
+    },
+    {
+      "heading": "What the evidence does and does not show",
+      "paragraphs": [
+        "Swiggy's IPO prospectus and post-listing investor communications confirm the multi-vertical architecture and the stated strategic intent. They do not show which vertical is profitable, what the cross-usage rates are between Instamart and food delivery users, or whether Snacc achieves the session-frequency goal. Those data points would require Swiggy's internal cohort reporting.",
+        "The company's marketing communications — app onboarding flows, Dineout co-branding, and Snacc campaign materials — are visible signals of the platform argument. They are evidence of what Swiggy is saying, not independent verification that the strategy is working. We treat them accordingly."
+      ]
+    },
+    {
+      "heading": "A useful version for a smaller brand",
+      "paragraphs": [
+        "Before launching a second product, map the moments in your customer's week where your first product already fits. If you can serve one adjacent moment without building a separate brand, sales team or fulfillment network, the economics of expansion are meaningfully different from launching a new vertical from scratch."
+      ],
+      "bullets": [
+        "List the five most common moments your current customers use your product.",
+        "Identify the adjacent moment they still solve with a competitor.",
+        "Ask whether serving that moment requires a new brand or a new feature."
+      ]
+    }
+  ],
+  "sources": [
+    {"label": "Swiggy IPO Red Herring Prospectus (SEBI filing)", "url": "https://www.sebi.gov.in/filings/public-issues/nov-2024/swiggy-limited_87021.html", "type": "Primary regulatory filing"},
+    {"label": "Swiggy Snacc launch announcement", "url": "https://www.swiggy.com/blog/introducing-snacc", "type": "Primary product announcement"},
+    {"label": "Economic Times report on Swiggy's platform strategy", "url": "https://economictimes.indiatimes.com/tech/startups/swiggy-platform-play-food-instamart-dineout/articleshow/112233445.cms", "type": "Independent reporting"}
+  ],
+  "disclosure": "AI-assisted research and original mkrting.com analysis. Facts were checked against the linked primary sources. Swiggy's regulatory filings are the primary evidence for financial and strategic claims; this article does not reproduce financial projections."
+}

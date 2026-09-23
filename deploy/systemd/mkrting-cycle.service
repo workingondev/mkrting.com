@@ -1,0 +1,13 @@
+[Unit]
+Description=mkrting.com local editorial collection and PR cycle
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=__PROJECT_DIR__
+EnvironmentFile=-__PROJECT_DIR__/.env
+ExecStart=__PYTHON__ __PROJECT_DIR__/tools/run_cycle.py
+Nice=10
+NoNewPrivileges=yes
+PrivateTmp=yes

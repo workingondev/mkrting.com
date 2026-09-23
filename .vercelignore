@@ -1,0 +1,13 @@
+.env
+.env.*
+.local
+.git
+.github
+.vercel
+dist
+deploy
+docs
+tests
+data
+__pycache__
+*.pyc

@@ -1,0 +1,801 @@
+[
+  {
+    "name": "Marketing Mind",
+    "website": "https://marketingmind.in/",
+    "status": "found",
+    "reason": "HTTP 200; robots.txt checked",
+    "handles": [
+      "marketingmind.in"
+    ]
+  },
+  {
+    "name": "Mad Over Marketing",
+    "website": "https://mad-over-marketing.com/",
+    "status": "found",
+    "reason": "HTTP 200; robots.txt checked",
+    "handles": [
+      "madovermarketing_mom"
+    ]
+  },
+  {
+    "name": "Social Samosa",
+    "website": "https://www.socialsamosa.com/",
+    "status": "found",
+    "reason": "HTTP 200; robots.txt checked",
+    "handles": [
+      "officialsocialsamosa"
+    ]
+  },
+  {
+    "name": "afaqs!",
+    "website": "https://www.afaqs.com/",
+    "status": "found",
+    "reason": "HTTP 200; robots.txt checked",
+    "handles": [
+      "afaqsdotcom"
+    ]
+  },
+  {
+    "name": "Campaign India",
+    "website": "https://www.campaignindia.in/",
+    "status": "found",
+    "reason": "HTTP 200; robots.txt checked",
+    "handles": [
+      "campaignindiaofficial"
+    ]
+  },
+  {
+    "name": "Exchange4media",
+    "website": "https://www.exchange4media.com/",
+    "status": "found",
+    "reason": "HTTP 200; robots.txt checked",
+    "handles": [
+      "exchange4media"
+    ]
+  },
+  {
+    "name": "ET Brand Equity",
+    "website": "https://brandequity.economictimes.indiatimes.com/",
+    "status": "found",
+    "reason": "HTTP 200; robots.txt checked",
+    "handles": [
+      "etbrandequity"
+    ]
+  },
+  {
+    "name": "Storyboard18",
+    "website": "https://www.storyboard18.com/",
+    "status": "found",
+    "reason": "HTTP 200; robots.txt checked",
+    "handles": [
+      "brandstoryboard"
+    ]
+  },
+  {
+    "name": "MediaBrief",
+    "website": "https://mediabrief.com/",
+    "status": "error",
+    "reason": "ValueError: response too large",
+    "handles": []
+  },
+  {
+    "name": "Social Ketchup",
+    "website": "https://www.socialketchup.in/",
+    "status": "found",
+    "reason": "HTTP 200; robots.txt checked",
+    "handles": [
+      "socialketchup"
+    ]
+  },
+  {
+    "name": "BuzzInContent",
+    "website": "https://www.buzzincontent.com/",
+    "status": "found",
+    "reason": "HTTP 200; robots.txt checked",
+    "handles": [
+      "BestMediaInfo",
+      "bestmediainfo",
+      "buzzincontent"
+    ]
+  },
+  {
+    "name": "IMPACT",
+    "website": "https://www.impactonnet.com/",
+    "status": "skipped",
+    "reason": "robots.txt HTTP 403",
+    "handles": []
+  },
+  {
+    "name": "Indian Television",
+    "website": "https://www.indiantelevision.com/",
+    "status": "no_link",
+    "reason": "HTTP 200; robots.txt checked",
+    "handles": []
+  },
+  {
+    "name": "Adgully",
+    "website": "https://www.adgully.com/",
+    "status": "no_link",
+    "reason": "HTTP 200; robots.txt checked",
+    "handles": []
+  },
+  {
+    "name": "MARKETECH APAC",
+    "website": "https://marketech-apac.com/",
+    "status": "skipped",
+    "reason": "robots.txt unavailable: TimeoutError",
+    "handles": []
+  },
+  {
+    "name": "Adweek",
+    "website": "https://www.adweek.com/",
+    "status": "found",
+    "reason": "HTTP 200; robots.txt checked",
+    "handles": [
+      "adweek"
+    ]
+  },
+  {
+    "name": "Ad Age",
+    "website": "https://adage.com/",
+    "status": "skipped",
+    "reason": "robots.txt HTTP 403",
+    "handles": []
+  },
+  {
+    "name": "The Drum",
+    "website": "https://www.thedrum.com/",
+    "status": "skipped",
+    "reason": "robots.txt HTTP 202",
+    "handles": []
+  },
+  {
+    "name": "Marketing Dive",
+    "website": "https://www.marketingdive.com/",
+    "status": "error",
+    "reason": "HTTPError: HTTP Error 403: Forbidden",
+    "handles": []
+  },
+  {
+    "name": "Campaign UK",
+    "website": "https://www.campaignlive.co.uk/",
+    "status": "skipped",
+    "reason": "robots.txt HTTP 403",
+    "handles": []
+  },
+  {
+    "name": "Little Black Book",
+    "website": "https://www.lbbonline.com/",
+    "status": "found",
+    "reason": "HTTP 200; robots.txt checked",
+    "handles": [
+      "lbbonline"
+    ]
+  },
+  {
+    "name": "Ads of the World",
+    "website": "https://www.adsoftheworld.com/",
+    "status": "skipped",
+    "reason": "robots.txt HTTP 403",
+    "handles": []
+  },
+  {
+    "name": "Creative Review",
+    "website": "https://www.creativereview.co.uk/",
+    "status": "found",
+    "reason": "HTTP 200; robots.txt checked",
+    "handles": [
+      "creativereview"
+    ]
+  },
+  {
+    "name": "Design Week",
+    "website": "https://www.designweek.co.uk/",
+    "status": "found",
+    "reason": "HTTP 200; robots.txt absent",
+    "handles": [
+      "designweekmag",
+      "embed.js"
+    ]
+  },
+  {
+    "name": "Brandingmag",
+    "website": "https://www.brandingmag.com/",
+    "status": "found",
+    "reason": "HTTP 200; robots.txt checked",
+    "handles": [
+      "branding.mag"
+    ]
+  },
+  {
+    "name": "WARC",
+    "website": "https://www.warc.com/",
+    "status": "found",
+    "reason": "HTTP 200; robots.txt checked",
+    "handles": [
+      "makeitwarc"
+    ]
+  },
+  {
+    "name": "Contagious",
+    "website": "https://www.contagious.com/",
+    "status": "found",
+    "reason": "HTTP 200; robots.txt checked",
+    "handles": [
+      "contagious"
+    ]
+  },
+  {
+    "name": "Fast Company",
+    "website": "https://www.fastcompany.com/",
+    "status": "error",
+    "reason": "HTTPError: HTTP Error 403: Forbidden",
+    "handles": []
+  },
+  {
+    "name": "Marketing Week",
+    "website": "https://www.marketingweek.com/",
+    "status": "found",
+    "reason": "HTTP 200; robots.txt checked",
+    "handles": [
+      "marketingweeked"
+    ]
+  },
+  {
+    "name": "Cannes Lions",
+    "website": "https://www.canneslions.com/",
+    "status": "found",
+    "reason": "HTTP 200; robots.txt checked",
+    "handles": [
+      "cannes_lions"
+    ]
+  },
+  {
+    "name": "Talented",
+    "website": "https://www.talented.agency/",
+    "status": "error",
+    "reason": "ValueError: response too large",
+    "handles": []
+  },
+  {
+    "name": "Ogilvy India",
+    "website": "https://www.ogilvy.com/",
+    "status": "found",
+    "reason": "HTTP 200; robots.txt checked",
+    "handles": [
+      "ogilvy"
+    ]
+  },
+  {
+    "name": "Leo Burnett India",
+    "website": "https://www.leoburnett.com/",
+    "status": "skipped",
+    "reason": "robots.txt unavailable: URLError",
+    "handles": []
+  },
+  {
+    "name": "DDB Mudra Group",
+    "website": "https://www.ddbmudragroup.com/",
+    "status": "no_link",
+    "reason": "HTTP 200; robots.txt checked",
+    "handles": []
+  },
+  {
+    "name": "FCB India",
+    "website": "https://www.fcb.com/",
+    "status": "found",
+    "reason": "HTTP 200; robots.txt checked",
+    "handles": [
+      "bbdochicago"
+    ]
+  },
+  {
+    "name": "McCann India",
+    "website": "https://www.mccannworldgroup.com/",
+    "status": "skipped",
+    "reason": "robots.txt unavailable: URLError",
+    "handles": []
+  },
+  {
+    "name": "VML India",
+    "website": "https://www.vml.com/",
+    "status": "error",
+    "reason": "HTTPError: HTTP Error 403: Forbidden",
+    "handles": []
+  },
+  {
+    "name": "Schbang",
+    "website": "https://www.schbang.com/",
+    "status": "found",
+    "reason": "HTTP 200; robots.txt checked",
+    "handles": [
+      "letschbang",
+      "schbang"
+    ]
+  },
+  {
+    "name": "WATConsult",
+    "website": "https://www.watconsult.com/",
+    "status": "found",
+    "reason": "HTTP 200; robots.txt checked",
+    "handles": [
+      "watconsult"
+    ]
+  },
+  {
+    "name": "Famous Innovations",
+    "website": "https://www.famous.in/",
+    "status": "skipped",
+    "reason": "robots.txt unavailable: URLError",
+    "handles": []
+  },
+  {
+    "name": "The Glitch",
+    "website": "https://www.theglitch.in/",
+    "status": "skipped",
+    "reason": "robots.txt unavailable: URLError",
+    "handles": []
+  },
+  {
+    "name": "TBWA India",
+    "website": "https://www.tbwa.com/",
+    "status": "found",
+    "reason": "HTTP 200; robots.txt checked",
+    "handles": [
+      "tbwa"
+    ]
+  },
+  {
+    "name": "BBDO India",
+    "website": "https://www.bbdo.com/",
+    "status": "found",
+    "reason": "HTTP 200; robots.txt checked",
+    "handles": [
+      "bbdo"
+    ]
+  },
+  {
+    "name": "Dentsu Creative India",
+    "website": "https://www.dentsu.com/",
+    "status": "skipped",
+    "reason": "robots.txt checked",
+    "handles": []
+  },
+  {
+    "name": "Creativeland Asia",
+    "website": "https://www.creativelandasia.com/",
+    "status": "found",
+    "reason": "HTTP 200; robots.txt checked",
+    "handles": [
+      "creativelandasia"
+    ]
+  },
+  {
+    "name": "Wieden+Kennedy",
+    "website": "https://www.wk.com/",
+    "status": "found",
+    "reason": "HTTP 200; robots.txt absent",
+    "handles": [
+      "wiedenkennedy"
+    ]
+  },
+  {
+    "name": "Droga5",
+    "website": "https://droga5.com/",
+    "status": "no_link",
+    "reason": "HTTP 200; robots.txt checked",
+    "handles": []
+  },
+  {
+    "name": "72andSunny",
+    "website": "https://www.72andsunny.com/",
+    "status": "found",
+    "reason": "HTTP 200; robots.txt checked",
+    "handles": [
+      "embed.js"
+    ]
+  },
+  {
+    "name": "Mother",
+    "website": "https://www.motherlondon.com/",
+    "status": "found",
+    "reason": "HTTP 200; robots.txt checked",
+    "handles": [
+      "motherlondon"
+    ]
+  },
+  {
+    "name": "Anomaly",
+    "website": "https://anomaly.com/",
+    "status": "error",
+    "reason": "ValueError: response too large",
+    "handles": []
+  },
+  {
+    "name": "Landor",
+    "website": "https://landor.com/",
+    "status": "error",
+    "reason": "TimeoutError: The read operation timed out",
+    "handles": []
+  },
+  {
+    "name": "Pentagram",
+    "website": "https://www.pentagram.com/",
+    "status": "error",
+    "reason": "ValueError: response too large",
+    "handles": []
+  },
+  {
+    "name": "Wolff Olins",
+    "website": "https://www.wolffolins.com/",
+    "status": "found",
+    "reason": "HTTP 200; robots.txt absent",
+    "handles": [
+      "wolffolins"
+    ]
+  },
+  {
+    "name": "Koto",
+    "website": "https://koto.studio/",
+    "status": "found",
+    "reason": "HTTP 200; robots.txt checked",
+    "handles": [
+      "studiokoto"
+    ]
+  },
+  {
+    "name": "Collins",
+    "website": "https://www.wearecollins.com/",
+    "status": "found",
+    "reason": "HTTP 200; robots.txt checked",
+    "handles": [
+      "thisiscollins"
+    ]
+  },
+  {
+    "name": "DesignStudio",
+    "website": "https://design.studio/",
+    "status": "no_link",
+    "reason": "HTTP 200; robots.txt checked",
+    "handles": []
+  },
+  {
+    "name": "BUCK",
+    "website": "https://buck.co/",
+    "status": "found",
+    "reason": "HTTP 200; robots.txt checked",
+    "handles": [
+      "buck_design"
+    ]
+  },
+  {
+    "name": "AKQA",
+    "website": "https://www.akqa.com/",
+    "status": "found",
+    "reason": "HTTP 200; robots.txt checked",
+    "handles": [
+      "akqa"
+    ]
+  },
+  {
+    "name": "R/GA",
+    "website": "https://www.rga.com/",
+    "status": "found",
+    "reason": "HTTP 200; robots.txt absent",
+    "handles": [
+      "rgabydesign"
+    ]
+  },
+  {
+    "name": "Jones Knowles Ritchie",
+    "website": "https://jkrglobal.com/",
+    "status": "found",
+    "reason": "HTTP 200; robots.txt checked",
+    "handles": [
+      "jkrglobal"
+    ]
+  },
+  {
+    "name": "Zomato",
+    "website": "https://www.zomato.com/",
+    "status": "skipped",
+    "reason": "robots.txt unavailable: TimeoutError",
+    "handles": []
+  },
+  {
+    "name": "Swiggy",
+    "website": "https://www.swiggy.com/",
+    "status": "error",
+    "reason": "HTTPError: HTTP Error 403: Forbidden",
+    "handles": []
+  },
+  {
+    "name": "Blinkit",
+    "website": "https://blinkit.com/",
+    "status": "skipped",
+    "reason": "robots.txt unavailable: URLError",
+    "handles": []
+  },
+  {
+    "name": "Zepto",
+    "website": "https://www.zeptonow.com/",
+    "status": "no_link",
+    "reason": "HTTP 202; robots.txt checked",
+    "handles": []
+  },
+  {
+    "name": "Amul",
+    "website": "https://amul.com/",
+    "status": "skipped",
+    "reason": "robots.txt checked",
+    "handles": []
+  },
+  {
+    "name": "CRED",
+    "website": "https://cred.club/",
+    "status": "no_link",
+    "reason": "HTTP 200; robots.txt checked",
+    "handles": []
+  },
+  {
+    "name": "Fevicol",
+    "website": "https://www.fevicol.com/",
+    "status": "skipped",
+    "reason": "robots.txt unavailable: URLError",
+    "handles": []
+  },
+  {
+    "name": "boAt",
+    "website": "https://www.boat-lifestyle.com/",
+    "status": "error",
+    "reason": "ValueError: response too large",
+    "handles": []
+  },
+  {
+    "name": "Asian Paints",
+    "website": "https://www.asianpaints.com/",
+    "status": "found",
+    "reason": "HTTP 200; robots.txt checked",
+    "handles": [
+      "asianpaints"
+    ]
+  },
+  {
+    "name": "Cadbury Dairy Milk India",
+    "website": "https://www.cadbury.co.in/",
+    "status": "no_link",
+    "reason": "HTTP 200; robots.txt checked",
+    "handles": []
+  },
+  {
+    "name": "Britannia",
+    "website": "https://www.britannia.co.in/",
+    "status": "found",
+    "reason": "HTTP 200; robots.txt checked",
+    "handles": [
+      "britanniasnackinc"
+    ]
+  },
+  {
+    "name": "Paper Boat",
+    "website": "https://paperboatdrinks.com/",
+    "status": "found",
+    "reason": "HTTP 200; robots.txt absent",
+    "handles": [
+      "paperboatdrinks"
+    ]
+  },
+  {
+    "name": "Tata Tea",
+    "website": "https://www.tataconsumer.com/",
+    "status": "found",
+    "reason": "HTTP 200; robots.txt checked",
+    "handles": [
+      "tataconsumerproducts"
+    ]
+  },
+  {
+    "name": "Tanishq",
+    "website": "https://www.tanishq.co.in/",
+    "status": "error",
+    "reason": "HTTPError: HTTP Error 403: Forbidden",
+    "handles": []
+  },
+  {
+    "name": "Titan",
+    "website": "https://www.titan.co.in/",
+    "status": "error",
+    "reason": "HTTPError: HTTP Error 403: Forbidden",
+    "handles": []
+  },
+  {
+    "name": "Nescafe India",
+    "website": "https://www.nescafe.com/in/",
+    "status": "found",
+    "reason": "HTTP 200; robots.txt checked",
+    "handles": [
+      "nescafeanz",
+      "nescafeindia"
+    ]
+  },
+  {
+    "name": "Maggi India",
+    "website": "https://www.maggi.in/",
+    "status": "found",
+    "reason": "HTTP 200; robots.txt checked",
+    "handles": [
+      "maggiindia"
+    ]
+  },
+  {
+    "name": "Lenskart",
+    "website": "https://www.lenskart.com/",
+    "status": "skipped",
+    "reason": "robots.txt unavailable: URLError",
+    "handles": []
+  },
+  {
+    "name": "Nykaa",
+    "website": "https://www.nykaa.com/",
+    "status": "error",
+    "reason": "HTTPException: got more than 100 headers",
+    "handles": []
+  },
+  {
+    "name": "Myntra",
+    "website": "https://www.myntra.com/",
+    "status": "skipped",
+    "reason": "robots.txt unavailable: URLError",
+    "handles": []
+  },
+  {
+    "name": "Flipkart",
+    "website": "https://www.flipkart.com/",
+    "status": "skipped",
+    "reason": "robots.txt unavailable: URLError",
+    "handles": []
+  },
+  {
+    "name": "Amazon India",
+    "website": "https://www.amazon.in/",
+    "status": "error",
+    "reason": "ValueError: response too large",
+    "handles": []
+  },
+  {
+    "name": "IKEA India",
+    "website": "https://www.ikea.com/in/en/",
+    "status": "error",
+    "reason": "ValueError: response too large",
+    "handles": []
+  },
+  {
+    "name": "Netflix India",
+    "website": "https://www.netflix.com/in/",
+    "status": "skipped",
+    "reason": "robots.txt unavailable: URLError",
+    "handles": []
+  },
+  {
+    "name": "Spotify India",
+    "website": "https://www.spotify.com/in-en/",
+    "status": "skipped",
+    "reason": "robots.txt unavailable: URLError",
+    "handles": []
+  },
+  {
+    "name": "Samsung India",
+    "website": "https://www.samsung.com/in/",
+    "status": "found",
+    "reason": "HTTP 200; robots.txt checked",
+    "handles": [
+      "samsung",
+      "samsungindia",
+      "samsungsrilanka"
+    ]
+  },
+  {
+    "name": "Nike India",
+    "website": "https://www.nike.com/in/",
+    "status": "found",
+    "reason": "HTTP 200; robots.txt checked",
+    "handles": [
+      "nike"
+    ]
+  },
+  {
+    "name": "Adidas India",
+    "website": "https://www.adidas.co.in/",
+    "status": "skipped",
+    "reason": "robots.txt HTTP 403",
+    "handles": []
+  },
+  {
+    "name": "Burger King India",
+    "website": "https://www.burgerking.in/",
+    "status": "no_link",
+    "reason": "HTTP 200; robots.txt checked",
+    "handles": []
+  },
+  {
+    "name": "McDonald's India",
+    "website": "https://www.mcdonaldsindia.com/",
+    "status": "no_link",
+    "reason": "HTTP 200; robots.txt checked",
+    "handles": []
+  },
+  {
+    "name": "The Whole Truth Foods",
+    "website": "https://thewholetruthfoods.com/",
+    "status": "found",
+    "reason": "HTTP 200; robots.txt checked",
+    "handles": [
+      "thewholetruthfoods"
+    ]
+  },
+  {
+    "name": "Minimalist",
+    "website": "https://beminimalist.co/",
+    "status": "error",
+    "reason": "ValueError: response too large",
+    "handles": []
+  },
+  {
+    "name": "SUGAR Cosmetics",
+    "website": "https://in.sugarcosmetics.com/",
+    "status": "error",
+    "reason": "ValueError: response too large",
+    "handles": []
+  },
+  {
+    "name": "Mamaearth",
+    "website": "https://mamaearth.in/",
+    "status": "error",
+    "reason": "ValueError: response too large",
+    "handles": []
+  },
+  {
+    "name": "Bombay Shaving Company",
+    "website": "https://www.bombayshavingcompany.com/",
+    "status": "error",
+    "reason": "ValueError: response too large",
+    "handles": []
+  },
+  {
+    "name": "Wakefit",
+    "website": "https://www.wakefit.co/",
+    "status": "error",
+    "reason": "HTTPError: HTTP Error 403: Forbidden",
+    "handles": []
+  },
+  {
+    "name": "Urban Company",
+    "website": "https://www.urbancompany.com/",
+    "status": "error",
+    "reason": "ValueError: response too large",
+    "handles": []
+  },
+  {
+    "name": "Blue Tokai",
+    "website": "https://bluetokaicoffee.com/",
+    "status": "found",
+    "reason": "HTTP 200; robots.txt checked",
+    "handles": [
+      "bluetokaicoffee"
+    ]
+  },
+  {
+    "name": "Mokobara",
+    "website": "https://mokobara.com/",
+    "status": "error",
+    "reason": "ValueError: response too large",
+    "handles": []
+  },
+  {
+    "name": "Country Delight",
+    "website": "https://countrydelight.in/",
+    "status": "no_link",
+    "reason": "HTTP 200; robots.txt checked",
+    "handles": []
+  }
+]
