@@ -227,8 +227,8 @@ def document(title: str, description: str, path: str, body: str, *, schema: dict
   {author_meta}
   {author_link}<link rel="canonical" href="{e(url)}">
   {hreflang}
-  <link rel="icon" href="/assets/favicon-64.png" sizes="64x64" type="image/png">
-  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/assets/mkrting-favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/assets/mkrting-favicon.png">
   <link rel="alternate" href="/rss.xml" type="application/rss+xml" title="mkrting.com articles">
   <meta property="og:type" content="{og_type}"><meta property="og:site_name" content="mkrting.com">
   <meta property="og:title" content="{e(title)}"><meta property="og:description" content="{e(description)}">
@@ -291,7 +291,7 @@ def home_page(articles: list[dict]) -> str:
         </section>'''
     recent = "".join(article_card(article, index + 1) for index, article in enumerate(articles[:6]))
     body = f'''<section class="hero"><div class="hero-kicker"><span class="pulse"></span> An independent marketing intelligence journal <span class="hero-issue">India-first / world-aware</span></div>
-      <h1>MARKETING<br><em>DECODED<span class="hero-period">.</span></em></h1>
+      <h1>Marketing<br><em>Decoded<span class="hero-period">.</span></em></h1>
       <div class="hero-bottom"><p>Campaigns move fast. We slow down to find the idea underneath&#8212;the audience, the creative choice, and the lesson worth keeping.</p><a class="hero-cta" href="/campaigns/">Explore the campaigns <span>&#8599;</span></a></div>
     </section>
     <div class="ticker" aria-label="Editorial focus"><div>CAMPAIGNS <b>&#10003;</b> BRAND STRATEGY <b>&#10003;</b> DESIGN <b>&#10003;</b> STARTUP LESSONS <b>&#10003;</b> CAMPAIGNS <b>&#10003;</b> BRAND STRATEGY <b>&#10003;</b> DESIGN <b>&#10003;</b></div></div>

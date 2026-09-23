@@ -4,9 +4,11 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageChops, ImageDraw, ImageFont
 
-ASSETS = Path(__file__).resolve().parents[1] / "site" / "assets"
+ROOT = Path(__file__).resolve().parents[1]
+ASSETS = ROOT / "site" / "assets"
+LOGO_SOURCE = ROOT / "Black White Bold Minimal Creative Agency Logo.png"
 INK = "#182820"
 PAPER = "#e9e8df"
 ORANGE = "#ff6544"
@@ -18,13 +20,37 @@ def font(size: int, bold: bool = True) -> ImageFont.FreeTypeFont:
     return ImageFont.truetype(path, size)
 
 
+def cropped_logo() -> Image.Image:
+    """Return the uploaded mark with its original artwork and a tight white margin."""
+    image = Image.open(LOGO_SOURCE).convert("RGB")
+    white = Image.new("RGB", image.size, "white")
+    difference = ImageChops.difference(image, white).convert("L")
+    bounds = difference.point(lambda value: 255 if value > 24 else 0).getbbox()
+    if bounds:
+        image = image.crop(bounds)
+    side = max(image.size)
+    canvas = Image.new("RGB", (side, side), "white")
+    canvas.paste(image, ((side - image.width) // 2, (side - image.height) // 2))
+    return canvas
+
+
 def favicon() -> None:
-    scale = 4
-    image = Image.new("RGB", (64 * scale, 64 * scale), INK)
-    draw = ImageDraw.Draw(image)
-    draw.text((8 * scale, 4 * scale), "m", fill=PAPER, font=font(48 * scale))
-    draw.ellipse((47 * scale, 45 * scale, 57 * scale, 55 * scale), fill=ORANGE)
-    image.resize((64, 64), Image.Resampling.LANCZOS).save(ASSETS / "favicon-64.png", optimize=True)
+    source = cropped_logo()
+    dark = (24, 40, 32)
+    white = (244, 242, 232)
+    orange = (255, 101, 68)
+    pixels = source.load()
+    for y in range(source.height):
+        for x in range(source.width):
+            red, green, blue = pixels[x, y]
+            if red > 150 and green < 180 and blue < 155 and red > green * 1.2:
+                coverage = max(0.0, min(1.0, (255 - green) / (255 - orange[1])))
+                pixels[x, y] = tuple(round(dark[i] * (1 - coverage) + orange[i] * coverage) for i in range(3))
+            else:
+                luminance = (red + green + blue) / 3
+                coverage = 1 - luminance / 255
+                pixels[x, y] = tuple(round(dark[i] * (1 - coverage) + white[i] * coverage) for i in range(3))
+    source.resize((64, 64), Image.Resampling.LANCZOS).save(ASSETS / "mkrting-favicon.png", optimize=True)
 
 
 def motorcycle() -> None:
