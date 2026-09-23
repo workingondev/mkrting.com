@@ -17,9 +17,13 @@ CONTENT = ROOT / "content" / "articles"
 GUIDES = ROOT / "content" / "guides"
 DIST = ROOT / "dist"
 ASSETS = ROOT / "site" / "assets"
-BASE_URL = os.getenv("SITE_URL", "https://mkrting.com").rstrip("/")
-if not BASE_URL.startswith("https://"):
-    raise ValueError("SITE_URL must be an HTTPS origin")
+# Vercel redirects www to the apex domain. Keep every generated search signal
+# on that same destination, even if a legacy Vercel SITE_URL still says www.
+CANONICAL_ORIGIN = "https://mkrting.com"
+configured_origin = os.getenv("SITE_URL", CANONICAL_ORIGIN).rstrip("/")
+if configured_origin not in {CANONICAL_ORIGIN, "https://www.mkrting.com"}:
+    raise ValueError("SITE_URL must be https://mkrting.com (or its www alias)")
+BASE_URL = CANONICAL_ORIGIN
 ACTIVE_NAV = {"Campaigns", "Guides", "About"}
 
 # Publisher entity — used in JSON-LD and E-E-A-T signals across all pages
