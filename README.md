@@ -34,7 +34,7 @@ The local database and drafts are in `.local/` and are ignored by Git. No key is
 
 ## Enable the editorial cycle
 
-1. Copy `.env.example` to `.env`. Add a Gemini API key. Set a daily call/token cap you are comfortable with. Never commit `.env`.
+1. Copy `.env.example` to `.env`. Add a Gemini API key. Set a daily call/token cap you are comfortable with. Never commit `.env`. The article workflow starts with `gemini-3.8-flash`, falls back through the configured Flash models only when a model is unavailable or rate limited, and may use `gemini-3.5-flash-lite` for source research. It stops before exceeding the local call/token caps; the model list is not a promise of unlimited API usage. Check current per-project limits in Google AI Studio.
 2. Run `python3 tools/run_cycle.py` once and inspect the report. It collects feeds, optionally collects Meta posts, drafts at most three **eligible** stories per India calendar day, and optionally opens draft PRs.
 3. On a Linux machine using systemd, run `python3 tools/install_timer.py`. This installs a user timer for this checkout and checks every four hours. Inspect with `systemctl --user list-timers mkrting-cycle.timer` and `journalctl --user -u mkrting-cycle.service -n 100`. A machine that should keep running after logout needs user lingering enabled by its administrator. The timer files and lingering setting exist on this machine, but their current running status could not be queried in this session. Collection stops while the laptop sleeps or loses connectivity.
 4. To create PRs, set `GITHUB_OWNER`, `GITHUB_REPO` and a fine-grained `GITHUB_TOKEN` with repository **Contents read/write** and **Pull requests read/write**. Use a dedicated account/token with the smallest necessary scope. The script cannot merge PRs.
@@ -56,6 +56,10 @@ python3 tools/engine.py add --url 'https://www.instagram.com/p/EXAMPLE/' --title
 ```
 
 The URL becomes a lead only. The system will hold drafting until a verified first-party campaign source and independent reporting are added to the same cluster.
+
+## Publisher identity and reader contact
+
+The public site uses `https://mkrting.com` as its only canonical origin. The `www` host redirects there in Vercel. Its footer links to the publisher's LinkedIn page, `mkrtingindia@gmail.com`, Contact, Privacy, Terms, Method and Corrections. The legal pages describe the current static site and should be revised if a registered legal operator, forms, advertising, a newsletter or new analytics are added. See the [publisher and policy handoff](docs/publisher-legal-notes.md) for ownership facts and remaining legal review. The editorial pipeline never treats a generated draft as approved publication.
 
 ## Vercel, GitHub and launch
 

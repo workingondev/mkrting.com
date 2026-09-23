@@ -735,6 +735,17 @@ input {
     margin: 0
 }
 
+.text-sections p + p {
+    margin-top: 14px
+}
+
+.text-sections a,
+.footer-end a {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    overflow-wrap: anywhere
+}
+
 .article-head {
     padding: 34px 4.1% 60px
 }

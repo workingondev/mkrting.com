@@ -24,6 +24,8 @@ configured_origin = os.getenv("SITE_URL", CANONICAL_ORIGIN).rstrip("/")
 if configured_origin not in {CANONICAL_ORIGIN, "https://www.mkrting.com"}:
     raise ValueError("SITE_URL must be https://mkrting.com (or its www alias)")
 BASE_URL = CANONICAL_ORIGIN
+CONTACT_EMAIL = "mkrtingindia@gmail.com"
+LINKEDIN_URL = "https://www.linkedin.com/company/mkrting/"
 ACTIVE_NAV = {"Campaigns", "Guides", "About"}
 
 # Publisher entity — used in JSON-LD and E-E-A-T signals across all pages
@@ -33,13 +35,12 @@ PUBLISHER = {
     "url": BASE_URL,
     "logo": {
         "@type": "ImageObject",
-        "url": BASE_URL + "/assets/favicon-64.png",
-        "width": 64,
-        "height": 64,
+        "url": BASE_URL + "/assets/logo-512.png",
+        "width": 512,
+        "height": 512,
     },
-    "sameAs": [
-        "https://mkrting.com/about/",
-    ],
+    "email": CONTACT_EMAIL,
+    "sameAs": [LINKEDIN_URL],
 }
 
 
@@ -222,7 +223,7 @@ def document(title: str, description: str, path: str, body: str, *, schema: dict
   <title>{e(page_title)}</title>
   <meta name="description" content="{e(description)}">
   <meta name="robots" content="index,follow,max-image-preview:large">
-  <meta name="theme-color" content="#ffffff">
+  <meta name="theme-color" content="#e9e8df">
   {author_meta}
   {author_link}<link rel="canonical" href="{e(url)}">
   {hreflang}
@@ -253,8 +254,8 @@ def document(title: str, description: str, path: str, body: str, *, schema: dict
     <main id="main">{body}</main>
     <footer class="footer">
       <div><a class="footer-mark" href="/" aria-label="mkrting.com home">mkrting<span>.</span>com</a><p>The strategy behind the campaign.</p></div>
-      <div class="footer-links"><a href="/guides/">Guides</a><a href="/about/">About</a><a href="/method/">Method</a><a href="/rss.xml">RSS</a><a href="/corrections/">Corrections</a></div>
-      <div class="footer-end">Independent campaign analysis<br>Made for curious marketers everywhere.</div>
+      <div class="footer-links"><a href="/guides/">Guides</a><a href="/about/">About</a><a href="/method/">Method</a><a href="/corrections/">Corrections</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a href="{LINKEDIN_URL}" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="/rss.xml">RSS</a></div>
+      <div class="footer-end">Independent campaign analysis<br><a href="mailto:{CONTACT_EMAIL}">{CONTACT_EMAIL}</a><br>&copy; {datetime.now(timezone.utc).year} mkrting.com</div>
     </footer>
   </div>
 </body>
@@ -307,9 +308,10 @@ def home_page(articles: list[dict]) -> str:
                 "@id": BASE_URL + "/#organization",
                 "name": "mkrting.com",
                 "url": BASE_URL,
-                "logo": {"@type": "ImageObject", "url": BASE_URL + "/assets/favicon-64.png", "width": 64, "height": 64},
+                "logo": {"@type": "ImageObject", "url": BASE_URL + "/assets/logo-512.png", "width": 512, "height": 512},
                 "description": "India-first marketing and brand strategy journal covering campaign analysis, creative decisions and startup lessons.",
-                "sameAs": ["https://mkrting.com/about/"],
+                "email": CONTACT_EMAIL,
+                "sameAs": [LINKEDIN_URL],
                 "foundingDate": "2026",
                 "knowsAbout": ["marketing strategy", "brand strategy", "campaign analysis", "Indian marketing", "startup marketing"],
             },
@@ -387,9 +389,19 @@ def guide_page(guide: dict, articles: list[dict]) -> str:
 
 
 def text_page(title: str, kicker: str, lead: str, sections: list[tuple[str, str]], path: str, nav: str = "") -> str:
-    block = "".join(f'<section><h2>{e(heading)}</h2><p>{e(copy)}</p></section>' for heading, copy in sections)
+    email_link = f'<a href="mailto:{CONTACT_EMAIL}">{CONTACT_EMAIL}</a>'
+    block = "".join(f'<section><h2>{e(heading)}</h2><p>{e(copy).replace(CONTACT_EMAIL, email_link)}</p></section>' for heading, copy in sections)
     body = f'''<div class="text-page"><div class="section-label"><span>{e(kicker)}</span><span>mkrting.com</span></div><h1>{e(title)}<span>.</span></h1><p class="text-lead">{e(lead)}</p><div class="text-sections">{block}</div></div>'''
     return document(title, lead, path, body, nav=nav)
+
+
+def contact_page() -> str:
+    body = f'''<div class="text-page"><div class="section-label"><span>04 / CONTACT</span><span>mkrting.com</span></div><h1>Contact<span>.</span></h1><p class="text-lead">Questions, corrections, permissions and privacy requests reach the publication directly.</p><div class="text-sections">
+      <section><h2>Email us</h2><p><a href="mailto:{CONTACT_EMAIL}">{CONTACT_EMAIL}</a></p><p>For a factual correction, include the article URL, the sentence at issue and a reliable source. For permissions, identify the content you want to reuse and where it will appear.</p></section>
+      <section><h2>Find us on LinkedIn</h2><p><a href="{LINKEDIN_URL}" target="_blank" rel="noopener noreferrer">mkrting.com on LinkedIn &#8599;</a></p><p>LinkedIn is an external service with its own privacy terms.</p></section>
+      <section><h2>Editorial independence</h2><p>Contacting us does not guarantee coverage or a particular editorial outcome. We distinguish factual corrections from requests to change an independent analysis.</p></section>
+    </div></div>'''
+    return document("Contact", "Contact mkrting.com for corrections, permissions, privacy requests and editorial questions.", "/contact/", body)
 
 
 def write(path: str, content: str) -> None:
@@ -430,6 +442,7 @@ def build() -> None:
         ("Our editorial standards", "Every article cites primary sources. Strategic readings are labelled as interpretation. Performance claims require verifiable measurement data, not publicity figures. AI assists research and drafting; a human editor reviews and approves every article before publication."),
         ("How we use AI", "Automation helps us find leads, group duplicate stories, organise evidence and prepare drafts. The editorial decision — what to publish and what to hold — is made by a person. Source links, evidence limits and corrections remain visible on every article."),
         ("Corrections", "We review challenged facts against linked evidence and update confirmed errors. Material corrections are noted on the article, and its modification date is updated. Our corrections policy is available at /corrections/."),
+        ("Ownership and contact", "mkrting.com is privately owned. Reach the publication at mkrtingindia@gmail.com or through our official LinkedIn company page. The Contact, Privacy and Terms pages explain how readers can reach us and use this site."),
     ], "/about/", "About"))
     write("method/index.html", text_page("Our method", "02 / METHODOLOGY", "Every article starts with a question: what can a reader learn here that the announcement itself cannot explain?", [
         ("Find the original", "We look for the brand's campaign page, official creative, agency release or first-party material. Trade publications and social curators help discover stories and corroborate details. A curator's post is a lead, not a fact."),
@@ -440,12 +453,31 @@ def build() -> None:
     ], "/method/"))
     write("corrections/index.html", text_page("Corrections", "03 / ACCOUNTABILITY", "How mkrting.com checks challenged claims, corrects factual errors and records material changes to published analysis.", [
         ("How corrections work", "We review challenged facts against the linked evidence and update confirmed errors. Material corrections are noted on the article, with the updated date. We do not silently delete or redate published content."),
-        ("Contact route", "A direct corrections address will be added when the domain mailbox is configured. Until then, please contact the publisher through its official channel. We do not display an untested email address."),
+        ("Report an error", "Email mkrtingindia@gmail.com with the article URL, the exact claim and a source that supports the correction. We review factual issues and update confirmed errors; a request to change an opinion or strategic interpretation is considered separately."),
     ], "/corrections/"))
+    write("contact/index.html", contact_page())
+    write("privacy/index.html", text_page("Privacy policy", "05 / PRIVACY", "How this independent publication handles information when you read the site or contact us. Last updated 23 September 2026.", [
+        ("Who operates the site", "mkrting.com is a privately owned publication. Privacy requests can be sent to mkrtingindia@gmail.com."),
+        ("Information we receive", "When you browse the site, our hosting provider may process technical request data such as your IP address, browser information, pages requested and request time to deliver and protect the site. When you email us, we receive your address and the information you choose to send. This site currently has no reader account, comment form or newsletter signup."),
+        ("Analytics and external services", "If enabled, Vercel Web Analytics provides aggregate page and referral statistics without third-party tracking cookies; Vercel Speed Insights may collect performance measurements. The site loads a font stylesheet from Google Fonts, so your browser may contact Google. Links to LinkedIn and cited sources take you to services governed by their own policies."),
+        ("Why we use information", "We use technical data to operate, secure and understand the site. We use messages to answer requests, investigate corrections, handle permissions and keep necessary records. Reader emails are not fed into the article drafting system."),
+        ("Sharing and storage", "Vercel hosts the website; Google provides the font service; Google Gmail handles our mailbox. These providers may process data outside India under their own terms. We do not sell reader information. We retain correspondence only as needed for the purpose of the exchange, legitimate records or legal obligations; provider logs follow provider retention settings."),
+        ("Your choices", "You can ask about, correct or request deletion of information you sent us by emailing mkrtingindia@gmail.com. We will review the request under applicable law and any record-keeping obligations. You can avoid sending personal information in a message unless it is needed for your request."),
+        ("Changes", "We will update this page when the site adds material data collection, a newsletter, advertising technology or other new services. The date above will change when the policy changes."),
+    ], "/privacy/"))
+    write("terms/index.html", text_page("Terms of use", "06 / TERMS", "Terms for reading, linking to and reusing material from mkrting.com. Last updated 23 September 2026.", [
+        ("The publication", "mkrting.com is an independently and privately owned editorial publication. Its articles analyse marketing, branding and startup strategy for general information. They are not business, legal, financial or other professional advice."),
+        ("Accuracy and corrections", "We aim to distinguish sourced facts from strategic interpretation, but campaigns, prices, offers and third-party pages can change. Check original sources before relying on time-sensitive details. Send a factual correction to mkrtingindia@gmail.com with the article URL and supporting evidence."),
+        ("Original work and reuse", "Unless stated otherwise, original mkrting.com writing, layout and illustrations belong to the site owner. You may link to pages and quote brief excerpts with clear credit and a link. For full republication, translation, commercial reuse or use of our graphics, request permission at mkrtingindia@gmail.com."),
+        ("Brands and third-party material", "Brand names, logos and campaign materials remain the property of their respective owners. Discussion of a campaign does not imply endorsement, sponsorship or affiliation. External sites and social platforms have their own terms and privacy practices."),
+        ("Reader conduct", "Do not attempt to disrupt the website, impersonate the publication or use its material in a way that misrepresents our analysis. Automated access must respect the site's technical controls and applicable law."),
+        ("Availability and responsibility", "The site may change, pause or remove content. We cannot guarantee uninterrupted access or that every external link remains available. Any limitation of responsibility applies only to the extent permitted by applicable law."),
+        ("Contact and changes", "Questions about these terms or permissions can be sent to mkrtingindia@gmail.com. We may update these terms as the publication develops and will show a revised date on this page. Applicable Indian law governs these terms, subject to mandatory rights that law preserves."),
+    ], "/terms/"))
     latest_article = max((article["updated"] for article in articles), default="")
     latest_guide = max((guide["updated"] for guide in guides), default="")
     latest_any = max(latest_article, latest_guide)
-    urls: list[tuple[str, str]] = [("/", latest_any), ("/campaigns/", latest_article), ("/guides/", latest_guide), ("/about/", ""), ("/method/", ""), ("/corrections/", "")]
+    urls: list[tuple[str, str]] = [("/", latest_any), ("/campaigns/", latest_article), ("/guides/", latest_guide), ("/about/", ""), ("/method/", ""), ("/corrections/", ""), ("/contact/", ""), ("/privacy/", ""), ("/terms/", "")]
     if "India" in ACTIVE_NAV:
         urls.append(("/india/", max(item["updated"] for item in india)))
     if "Teardowns" in ACTIVE_NAV:
