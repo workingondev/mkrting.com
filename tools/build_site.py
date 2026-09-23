@@ -253,9 +253,17 @@ def document(title: str, description: str, path: str, body: str, *, schema: dict
     </header>
     <main id="main">{body}</main>
     <footer class="footer">
-      <div><a class="footer-mark" href="/" aria-label="mkrting.com home">mkrting<span>.</span>com</a><p>The strategy behind the campaign.</p></div>
-      <div class="footer-links"><a href="/guides/">Guides</a><a href="/about/">About</a><a href="/method/">Method</a><a href="/corrections/">Corrections</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a href="{LINKEDIN_URL}" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="/rss.xml">RSS</a></div>
-      <div class="footer-end">Independent campaign analysis<br><a href="mailto:{CONTACT_EMAIL}">{CONTACT_EMAIL}</a><br>&copy; {datetime.now(timezone.utc).year} mkrting.com</div>
+      <div class="footer-intro">
+        <a class="footer-mark" href="/" aria-label="mkrting.com home">mkrting<span>.</span>com</a>
+        <p>Independent analysis of the decisions behind marketing campaigns.</p>
+        <a class="footer-email" href="mailto:{CONTACT_EMAIL}">{CONTACT_EMAIL}</a>
+      </div>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <div><span>Explore</span><a href="/campaigns/">Campaigns</a><a href="/india/">India</a><a href="/guides/">Guides</a><a href="/rss.xml">RSS feed</a></div>
+        <div><span>Publication</span><a href="/about/">About</a><a href="/method/">Method</a><a href="/corrections/">Corrections</a><a href="/contact/">Contact</a></div>
+        <div><span>Legal &amp; social</span><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a href="{LINKEDIN_URL}" target="_blank" rel="noopener noreferrer">LinkedIn <b aria-hidden="true">&#8599;</b></a></div>
+      </nav>
+      <div class="footer-bottom"><span>&copy; {datetime.now(timezone.utc).year} mkrting.com. Privately owned.</span><span>India-first / world-aware</span></div>
     </footer>
   </div>
 </body>
@@ -337,7 +345,11 @@ def article_page(article: dict, related: list[dict]) -> str:
     if image_path:
         if not image_path.startswith("/assets/") or not (ASSETS / image_path.removeprefix("/assets/")).is_file() or not article.get("hero_alt"):
             raise ValueError(f"Article image and alt text are invalid: {article['slug']}")
-        art = f'<figure class="article-figure"><img src="{e(image_path)}" width="1200" height="675" alt="{e(article["hero_alt"])}" fetchpriority="high"><figcaption>{e(article.get("hero_caption", "Original mkrting.com analysis graphic."))}</figcaption></figure>'
+        hero_width = int(article.get("hero_width", 1200))
+        hero_height = int(article.get("hero_height", 675))
+        if hero_width < 1 or hero_height < 1:
+            raise ValueError(f"Article image dimensions are invalid: {article['slug']}")
+        art = f'<figure class="article-figure"><img src="{e(image_path)}" width="{hero_width}" height="{hero_height}" alt="{e(article["hero_alt"])}" fetchpriority="high"><figcaption>{e(article.get("hero_caption", "Original mkrting.com analysis graphic."))}</figcaption></figure>'
     else:
         art = f'<div class="article-art" aria-hidden="true"><span>{e(article["brand"][:1].upper())}</span><i>CAMPAIGN / DECODED</i></div>'
     related_cards = "".join(f'<li><a href="{href(item)}">{e(item["title"])} <span>&#8599;</span></a></li>' for item in related[:3])
