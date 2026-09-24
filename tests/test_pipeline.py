@@ -72,6 +72,14 @@ class PipelineTests(unittest.TestCase):
         self.assertEqual(engine.validate_draft(article, urls, {article["sources"][0]["url"]}), [])
         self.assertIn("article must cite the verified primary source", engine.validate_draft(article, urls, {"https://brand.example/official"}))
 
+    def test_new_editorial_gate_holds_thin_drafts(self) -> None:
+        path = Path(__file__).resolve().parents[1] / "content/articles/adobe-software-india-tops-digital-ad-impressions.json"
+        article = json.loads(path.read_text(encoding="utf-8"))
+        urls = {source["url"] for source in article["sources"]}
+        self.assertEqual(engine.validate_draft(article, urls, None, enforce_editorial_depth=True), [])
+        article["sections"] = article["sections"][:2]
+        self.assertIn("article needs four substantive sections with two paragraphs each", engine.validate_draft(article, urls, None, enforce_editorial_depth=True))
+
     def test_search_console_export_identifies_a_real_query_opportunity(self) -> None:
         queries = Path(self.temp.name) / "Queries.csv"
         pages = Path(self.temp.name) / "Pages.csv"
