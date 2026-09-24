@@ -13,7 +13,9 @@ import os
 import urllib.error
 import urllib.parse
 import urllib.request
+from datetime import datetime
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 from engine import ROOT, validate_saved_draft
 
@@ -49,9 +51,16 @@ def create_pr(draft_path: Path) -> str:
     if payload.get("pr_url"):
         return payload["pr_url"]
     article = payload["article"]
+    if not article.get("published_at"):
+        published_at = datetime.now(ZoneInfo("Asia/Kolkata"))
+        article["published_at"] = published_at.isoformat(timespec="seconds")
+        article["published"] = published_at.date().isoformat()
+        article["updated"] = article["published"]
     errors = validate_saved_draft(payload)
     if errors:
         raise RuntimeError("Draft failed final validation: " + "; ".join(errors))
+    # Keep the timestamp stable if a network failure makes the editor retry.
+    draft_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     slug = article["slug"]
     relative = f"content/articles/{slug}.json"
     if (ROOT / relative).exists():

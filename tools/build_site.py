@@ -111,8 +111,14 @@ def load_articles() -> list[dict]:
             safe_url(article["video_url"])
         datetime.fromisoformat(article["published"])
         datetime.fromisoformat(article["updated"])
+        if article.get("published_at"):
+            timestamp = datetime.fromisoformat(article["published_at"])
+            if timestamp.tzinfo is None or timestamp.date().isoformat() != article["published"]:
+                raise ValueError(f"Invalid published_at in {path}")
         result.append(article)
-    result.sort(key=lambda item: item["published"], reverse=True)
+    # Calendar dates alone cannot order two stories published on the same day.
+    # Older articles without a timestamp sort before timed articles that day.
+    result.sort(key=lambda item: item.get("published_at", item["published"] + "T00:00:00+05:30"), reverse=True)
     return result
 
 
@@ -297,7 +303,7 @@ def home_page(articles: list[dict]) -> str:
           <a class="feature-link" href="{href(latest)}">{visual}
             <div class="feature-copy"><span class="eyebrow">{e(latest['category'])} / {e(latest['kind'])}</span><h2 id="feature-title">{e(latest['title'])}</h2><p>{e(latest['dek'])}</p><div class="feature-lesson"><span>THE TAKEAWAY</span><strong>{e(latest['lesson'])}</strong></div><span class="round-arrow" aria-label="Read analysis">&#8599;</span></div></a>
         </section>'''
-    recent = "".join(article_card(article, index + 1) for index, article in enumerate(articles[:6]))
+    recent = "".join(article_card(article, index + 1) for index, article in enumerate(articles[:12]))
     body = f'''<section class="hero"><div class="hero-kicker"><span class="pulse"></span> An independent marketing intelligence journal <span class="hero-issue">India-first / world-aware</span></div>
       <h1>Marketing<br><em>Decoded<span class="hero-period">.</span></em></h1>
       <div class="hero-bottom"><p>Campaigns move fast. We slow down to find the idea underneath&#8212;the audience, the creative choice, and the lesson worth keeping.</p><a class="hero-cta" href="/campaigns/">Explore the campaigns <span>&#8599;</span></a></div>
