@@ -11,6 +11,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from urllib.parse import urlparse
 from xml.sax.saxutils import escape as xml_escape
+from zoneinfo import ZoneInfo
 
 ROOT = Path(__file__).resolve().parents[1]
 CONTENT = ROOT / "content" / "articles"
@@ -140,6 +141,13 @@ def href(article: dict) -> str:
     return f"/campaigns/{article['slug']}/"
 
 
+def publication_instant(article: dict) -> datetime:
+    value = article.get("published_at")
+    if value:
+        return datetime.fromisoformat(value)
+    return datetime.fromisoformat(article["published"]).replace(tzinfo=ZoneInfo("Asia/Kolkata"))
+
+
 def breadcrumb_schema(parts: list[tuple[str, str]]) -> dict:
     return {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": index + 1, "name": name, "item": BASE_URL + path} for index, (name, path) in enumerate(parts)]}
 
@@ -169,25 +177,7 @@ def article_schema(title: str, description: str, path: str, published: str, upda
 
 
 def guide_schema(guide: dict, path: str, articles: list[dict]) -> dict:
-    """Generate FAQPage + HowTo + Article schema for guide pages."""
-    faq_items = []
-    for section in guide.get("sections", []):
-        answer_text = " ".join(section.get("paragraphs", []))[:300]
-        for question in section.get("questions", []):
-            faq_items.append({
-                "@type": "Question",
-                "name": question,
-                "acceptedAnswer": {"@type": "Answer", "text": answer_text},
-            })
-    how_to_steps = []
-    for i, section in enumerate(guide.get("sections", []), 1):
-        step_text = " ".join(section.get("paragraphs", []))[:200]
-        how_to_steps.append({
-            "@type": "HowToStep",
-            "position": i,
-            "name": section.get("heading", f"Step {i}"),
-            "text": step_text,
-        })
+    """Describe the visible guide as an article with its breadcrumb trail."""
     article_node: dict = {
         "@type": "Article",
         "headline": guide["title"],
@@ -201,10 +191,6 @@ def guide_schema(guide: dict, path: str, articles: list[dict]) -> dict:
         "inLanguage": "en-IN",
     }
     nodes: list[dict] = [article_node, breadcrumb_schema([("Home", "/"), ("Guides", "/guides/"), (guide["title"], path)])]
-    if faq_items:
-        nodes.append({"@type": "FAQPage", "mainEntity": faq_items})
-    if how_to_steps:
-        nodes.append({"@type": "HowTo", "name": guide["title"], "description": guide["dek"], "step": how_to_steps})
     return {"@context": "https://schema.org", "@graph": nodes}
 
 
@@ -354,6 +340,7 @@ def article_page(article: dict, related: list[dict]) -> str:
                 raise ValueError(f"Article analysis image and alt text are invalid: {article['slug']}")
             section_html.append(f'<figure class="article-figure article-explainer"><img src="{e(analysis_image)}" width="1200" height="675" alt="{e(article["analysis_alt"])}" loading="lazy"><figcaption>{e(article.get("analysis_caption", "Original mkrting.com analysis graphic."))}</figcaption></figure>')
     sources = "".join(f'<li><span>{e(source["type"])}</span><a href="{e(source["url"])}" target="_blank" rel="noopener noreferrer">{e(source["label"])} &#8599;</a></li>' for source in article["sources"])
+    editorial_note = f'<p class="disclosure"><strong>Editorial note:</strong> {e(article["editorial_note"])}</p>' if article.get("editorial_note") else ""
     creative = f'<a class="creative-link" href="{e(article["video_url"])}" target="_blank" rel="noopener noreferrer"><span>&#9654;</span><strong>Watch the original campaign</strong><small>Opens at the source &#8599;</small></a>' if article.get("video_url") else ""
     image_path = article.get("hero_image")
     if image_path:
@@ -370,18 +357,18 @@ def article_page(article: dict, related: list[dict]) -> str:
     related_links_for_schema = [href(item) for item in related[:3]]
     related_html = f'<section class="article-related"><h2>Keep reading</h2><ul><li><a href="/guides/campaign-analysis/">How to analyse a marketing campaign <span>&#8599;</span></a></li>{related_cards}</ul></section>'
     body = f'''<article class="article"><div class="article-head"><div class="breadcrumb"><a href="/">Home</a> / <a href="/campaigns/">Campaigns</a> / {e(article['brand'])}</div><div class="article-tags"><span>{e(article['category'])}</span><span>{e(article['kind'])}</span></div><h1>{e(article['title'])}</h1><p class="article-dek">{e(article['dek'])}</p><div class="article-byline"><div>mkrting.com <span>Editorial desk</span></div><div>Published <time datetime="{e(article['published'])}">{e(article['published'])}</time><br>Updated <time datetime="{e(article['updated'])}">{e(article['updated'])}</time></div><div>{e(article['read_minutes'])} min read</div></div></div>
-      <div class="article-layout"><aside class="article-rail"><div class="rail-label">The core idea</div><p>{e(article['signal'])}</p><div class="rail-rule"></div><div class="rail-label">The lesson</div><p>{e(article['lesson'])}</p><a href="#sources">View sources &#8595;</a></aside><div class="article-body">{art}{creative}{''.join(section_html)}<div class="article-takeaway"><span>THE STARTUP TAKEAWAY</span><p>{e(article['lesson'])}</p></div><section class="article-sources" id="sources"><h2>Sources &amp; notes</h2><p>Source links document the campaign and reporting. Strategic interpretation is mkrting.com&#39;s own.</p><ul>{sources}</ul><p class="disclosure">{e(article['disclosure'])}</p><p class="disclosure">Found an error? Read our <a href="/corrections/">corrections policy</a>.</p></section>{related_html}</div></div></article>'''
+      <div class="article-layout"><aside class="article-rail"><div class="rail-label">The core idea</div><p>{e(article['signal'])}</p><div class="rail-rule"></div><div class="rail-label">The lesson</div><p>{e(article['lesson'])}</p><a href="#sources">View sources &#8595;</a></aside><div class="article-body">{art}{creative}{''.join(section_html)}<div class="article-takeaway"><span>THE STARTUP TAKEAWAY</span><p>{e(article['lesson'])}</p></div><section class="article-sources" id="sources"><h2>Sources &amp; notes</h2><p>These links document reported facts and original material where available. Strategic interpretation is mkrting.com&#39;s own.</p><ul>{sources}</ul><p class="disclosure">{e(article['disclosure'])}</p>{editorial_note}<p class="disclosure">Found an error? Read our <a href="/corrections/">corrections policy</a>.</p></section>{related_html}</div></div></article>'''
     wc = word_count(article)
     schema = article_schema(
         article["title"], article["dek"], href(article),
-        article["published"], article["updated"],
+        article.get("published_at", article["published"]), article["updated"],
         [("Home", "/"), ("Campaigns", "/campaigns/"), (article["brand"], href(article))],
         image_path, word_count_val=wc, related_links=related_links_for_schema,
     )
     return document(
         article["title"], article.get("seo_description", article["dek"]), href(article), body,
         schema=schema, meta_title=article.get("seo_title"), image=image_path,
-        published=article["published"], updated=article["updated"],
+        published=article.get("published_at", article["published"]), updated=article["updated"],
         article_category=article.get("category", ""), article_kind=article.get("kind", ""),
         is_article=True,
     )
@@ -512,7 +499,7 @@ def build() -> None:
     urls.extend((f"/guides/{guide['slug']}/", guide["updated"]) for guide in guides)
     sitemap = '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + "".join(f'<url><loc>{xml_escape(BASE_URL + path)}</loc>{f"<lastmod>{xml_escape(lastmod)}</lastmod>" if lastmod else ""}</url>' for path, lastmod in urls) + "</urlset>"
     write("sitemap.xml", sitemap)
-    items = "".join(f'<item><title>{xml_escape(article["title"])}</title><link>{xml_escape(BASE_URL + href(article))}</link><guid>{xml_escape(BASE_URL + href(article))}</guid><description>{xml_escape(article["dek"])}</description><pubDate>{datetime.fromisoformat(article["published"]).replace(tzinfo=timezone.utc).strftime("%a, %d %b %Y %H:%M:%S GMT")}</pubDate></item>' for article in articles)
+    items = "".join(f'<item><title>{xml_escape(article["title"])}</title><link>{xml_escape(BASE_URL + href(article))}</link><guid>{xml_escape(BASE_URL + href(article))}</guid><description>{xml_escape(article["dek"])}</description><pubDate>{publication_instant(article).astimezone(timezone.utc).strftime("%a, %d %b %Y %H:%M:%S GMT")}</pubDate></item>' for article in articles)
     write("rss.xml", f'<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"><channel><title>mkrting.com</title><link>{xml_escape(BASE_URL)}</link><description>The strategy behind the campaign.</description>{items}</channel></rss>')
     write("robots.txt", f"User-agent: *\nAllow: /\nSitemap: {BASE_URL}/sitemap.xml\n")
     print(f"Built {len(articles)} articles, {len(guides)} guides and {len(urls)} indexable URLs in {DIST}")

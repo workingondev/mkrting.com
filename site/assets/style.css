@@ -1399,7 +1399,10 @@ input {
     }
 
     .article-head h1 {
-        font-size: clamp(44px, 14vw, 60px)
+        font-size: clamp(38px, 10.5vw, 54px);
+        line-height: .98;
+        letter-spacing: -.065em;
+        overflow-wrap: anywhere
     }
 
     .article-dek {

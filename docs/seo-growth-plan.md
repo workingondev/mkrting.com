@@ -1,6 +1,6 @@
 # Search growth plan for mkrting.com
 
-Research date: 23 September 2026. This is a working editorial plan, not a promise of a ranking. Google says even technically eligible pages may not be crawled, indexed or shown. The public `https://mkrting.com/` URL could not be fetched during this audit, and no verified Search Console property or live search data was available. The first real SEO milestone is deployment and indexability.
+Updated: 24 September 2026. This is a working editorial plan, not a promise of a ranking. The public `https://mkrting.com/` site is live with eight articles and two guides. The owner reports that Search Console shows no performance or indexing data yet, so keyword positions, organic traffic and field Core Web Vitals cannot be measured. The next milestone is confirming Google discovers and indexes the canonical pages.
 
 ## 1. Win a defined audience before a broad word
 
@@ -15,7 +15,7 @@ Initial search-intent map:
 | How do Indian brands turn product truths into advertising? | Comparative analysis based on several sourced campaigns | Research once the archive exists |
 | What changed in Indian packaging or identity design? | Sourced design teardown with original diagrams | Research and publish when an original example is verified |
 
-The first two rows are pages in the local build, not yet live on the public domain. Check the live search results again before assigning an article to a query; the intent and competing pages change. Do not turn every synonym into a near-duplicate page.
+The campaign analysis guide is live. Check the live search results again before assigning an article to a query; the intent and competing pages change. Do not turn every synonym into a near-duplicate page.
 
 ## 2. Make each article earn its URL
 
@@ -41,11 +41,11 @@ Avoid auto-generated tag pages with the same card list and a swapped keyword. Th
 
 ## 4. Technical launch sequence
 
-1. Deploy the built files through Vercel and confirm `https://mkrting.com/` is the production domain. Redirect `www.mkrting.com` to `mkrting.com` in Vercel's Domains settings; `trailingSlash: true` matches the generated canonical URLs. Test that every important page returns HTTP 200 and is visible without login. Google needs an accessible page; a sitemap alone cannot make an unavailable site rank. [Google technical requirements](https://developers.google.com/search/docs/essentials/technical). See the [Vercel launch guide](vercel-launch.md) for exact checks.
-2. Verify domain ownership in Google Search Console and Bing Webmaster Tools. Submit `https://mkrting.com/sitemap.xml`, inspect the homepage, guide and first article, and check indexing/exclusion reports. [Search Console setup](https://developers.google.com/search/docs/monitor-debug/search-console-start), [Bing sitemap guidance](https://www.bing.com/webmasters/help/bing-webmaster-guidelines-30fba23a).
+1. Confirm `https://mkrting.com/` is the production domain and `www.mkrting.com` redirects to it. The sitemap, robots file and main page have previously returned HTTP 200; recheck after major deployments. `trailingSlash: true` matches generated canonicals. [Google technical requirements](https://developers.google.com/search/docs/essentials/technical). See the [Vercel launch guide](vercel-launch.md) for exact checks.
+2. In the verified domain property in Google Search Console, submit `https://mkrting.com/sitemap.xml`, inspect the homepage, guide and an article, and use **Test live URL** before **Request indexing**. A submitted sitemap is a discovery hint, and an empty report does not prove a technical fault. Check again after Google has had time to crawl. [Search Console setup](https://developers.google.com/search/docs/monitor-debug/search-console-start).
 3. Test the article and breadcrumb markup with Google's Rich Results Test after deployment. Schema must reflect visible content; it makes a page easier to understand but does not guarantee a rich result. [Article guidance](https://developers.google.com/search/docs/appearance/structured-data/article), [breadcrumb guidance](https://developers.google.com/search/docs/appearance/structured-data/breadcrumb).
-4. Measure real mobile performance with Search Console and PageSpeed Insights after traffic arrives. Google recommends LCP within 2.5 seconds, INP under 200 ms and CLS under 0.1. The static site has no client JavaScript and uses small original assets, but there is no field-data score yet. [Core Web Vitals](https://developers.google.com/search/docs/appearance/core-web-vitals).
-relevant visuals. For Discover, Google recommends high-quality, crawlable images at least 1200 px wide and permits `max-image-preview:large`; eligibility is not guaranteed. [Discover guidance](https://developers.google.com/search/docs/appearance/google-discover).
+4. Measure real mobile performance with Search Console and PageSpeed Insights after traffic arrives. Google recommends LCP within 2.5 seconds, INP under 200 ms and CLS under 0.1. The static site has no client JavaScript, but no field-data score has been measured. [Core Web Vitals](https://developers.google.com/search/docs/appearance/core-web-vitals).
+5. Give substantive articles relevant original visuals where they genuinely help explain the work. For Discover, Google recommends high-quality, crawlable images at least 1200 px wide and permits `max-image-preview:large`; eligibility is not guaranteed. [Discover guidance](https://developers.google.com/search/docs/appearance/google-discover).
 6. Once the domain is live, consider IndexNow for Bing and participating engines when URLs change. It requires a key file hosted on the live domain. It is a discovery notification, not a ranking service and not a substitute for Google's Search Console. [Bing IndexNow setup](https://www.bing.com/indexnow/getstarted).
 
 For Google's AI Overviews and AI Mode, use the same foundation: an indexable page with a useful, original answer and clear evidence. Google says there is no special schema, file or separate submission for these features. Track any resulting visits within Search Console's Web performance data; it does not provide a guaranteed placement. Avoid selling or building a separate “AI SEO” shortcut. [Google's AI features guidance](https://developers.google.com/search/docs/appearance/ai-features), [generative AI optimization guide](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide).

@@ -596,7 +596,7 @@ def validate_draft(draft: dict, allowed_urls: set[str], primary_urls: set[str] |
         errors.append("needs at least three substantive sections")
         sections = []
     for section in sections:
-        if not isinstance(section, dict) or not section.get("heading") or not isinstance(section.get("paragraphs"), list) or not all(isinstance(p, str) and p.strip() for p in section["paragraphs"]):
+        if not isinstance(section, dict) or not section.get("heading") or not isinstance(section.get("paragraphs"), list) or not section["paragraphs"] or not all(isinstance(p, str) and p.strip() for p in section["paragraphs"]):
             errors.append("invalid article section")
             break
     if sections and isinstance(sections[0], dict) and isinstance(sections[0].get("paragraphs"), list):
@@ -786,6 +786,8 @@ def draft_from_report(connection: sqlite3.Connection, cluster_id: int) -> Path:
         "Every factual sentence must be traceable to the research ledger; mark all strategic interpretation as interpretation. "
         "Use cautious attribution such as 'the report says' for claims that lack a brand source. Do not invent results, quotes, creative details or images. "
         "The disclosure must clearly state that this is a single-source analysis. If the source access is rss_summary_only, do not imply the article page was read. "
+        "Add a concrete original contribution: a clearly labelled calculation from reported numbers, a useful comparison, or a practical decision framework. "
+        "Explain what the source cannot establish. A rewrite of the report or a generic lesson is insufficient; return {\"ready\":false} in that case. "
         "If the evidence is too thin, return {\"ready\":false}. Date: " + today + "\nEvidence: " + json.dumps(research, ensure_ascii=False)
         + "\nSource access: " + source_access + "\nReport URL: " + url + "\nSupplied source text: " + excerpt)
     article, writing_model = gemini_json(connection, writing_prompt, stage="Working article", max_output=8192)
