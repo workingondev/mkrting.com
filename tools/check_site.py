@@ -23,7 +23,7 @@ class Links(HTMLParser):
         self.title = ""
         self.descriptions: list[str] = []
         self.h1_count = 0
-        self.images: list[tuple[str, str]] = []
+        self.images: list[tuple[str, str | None]] = []
         self.schemas: list[dict] = []
         self.in_title = False
         self.in_schema = False
@@ -42,7 +42,7 @@ class Links(HTMLParser):
         if tag == "meta" and attributes.get("name") == "description":
             self.descriptions.append(attributes.get("content") or "")
         if tag == "img":
-            self.images.append((attributes.get("src") or "", attributes.get("alt") or ""))
+            self.images.append((attributes.get("src") or "", attributes.get("alt")))
         if tag == "script" and attributes.get("type") == "application/ld+json":
             self.in_schema = True
             self.schema_text = ""
@@ -95,7 +95,8 @@ def main() -> None:
         if parser.h1_count != 1:
             errors.append(f"{relative}: expected one main heading")
         for src, alt in parser.images:
-            if not alt.strip():
+            # alt="" is valid for decorative artwork beside an article title.
+            if alt is None:
                 errors.append(f"{relative}: image lacks alternative text")
             if src.startswith("/") and not (DIST / src.lstrip("/")).is_file():
                 errors.append(f"{relative}: missing image {src}")

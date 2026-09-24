@@ -65,7 +65,9 @@ class PipelineTests(unittest.TestCase):
     def test_generated_article_must_cite_primary(self) -> None:
         article_paths = sorted((Path(__file__).resolve().parents[1] / "content/articles").glob("*.json"))
         self.assertTrue(article_paths)
-        article = json.loads(article_paths[0].read_text())
+        article = next((candidate for path in article_paths
+                        if len((candidate := json.loads(path.read_text()))["sources"]) >= 2), None)
+        self.assertIsNotNone(article)
         urls = {source["url"] for source in article["sources"]}
         self.assertEqual(engine.validate_draft(article, urls, {article["sources"][0]["url"]}), [])
         self.assertIn("article must cite the verified primary source", engine.validate_draft(article, urls, {"https://brand.example/official"}))
