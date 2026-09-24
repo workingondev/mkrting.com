@@ -271,7 +271,7 @@ def article_card(article: dict, index: int) -> str:
     return f'''<a class="story-card" href="{href(article)}">
       <div class="story-card-top"><span>{e(article['kind'])}</span><span>{index:02d}</span></div>
       {artwork}
-      <div class="story-meta"><span>{e(article['category'])}</span><span>{e(article['published'])}</span></div>
+      <div class="story-meta"><span>{e(article.get('market', article['category']))}</span><span>{e(article['published'])}</span></div>
       <h3>{e(article['title'])}</h3><p>{e(article['dek'])}</p>
       <span class="card-read">Read the analysis <span aria-hidden="true">↗</span></span>
     </a>'''
@@ -426,7 +426,7 @@ def write(path: str, content: str) -> None:
 def build() -> None:
     articles = load_articles()
     guides = load_guides()
-    india = [item for item in articles if item["category"] == "India"]
+    india = [item for item in articles if item.get("market", item["category"]) == "India"]
     teardowns = [item for item in articles if item["kind"].lower() == "campaign teardown"]
     ACTIVE_NAV.clear()
     ACTIVE_NAV.update({"Campaigns", "Guides", "About"})

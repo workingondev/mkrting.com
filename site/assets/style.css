@@ -460,11 +460,12 @@ input {
 
 .story-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 16px
 }
 
 .story-card {
+    min-width: 0;
     border: 1px solid var(--ink);
     background: var(--paper2);
     display: flex;
@@ -532,6 +533,7 @@ input {
 .card-art-image img {
     display: block;
     width: 100%;
+    min-width: 0;
     height: 100%;
     object-fit: contain
 }
@@ -1160,7 +1162,7 @@ input {
     }
 
     .story-grid {
-        grid-template-columns: repeat(2, 1fr)
+        grid-template-columns: repeat(2, minmax(0, 1fr))
     }
 
     .article-layout {
