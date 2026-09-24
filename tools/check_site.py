@@ -24,6 +24,7 @@ class Links(HTMLParser):
         self.descriptions: list[str] = []
         self.h1_count = 0
         self.images: list[tuple[str, str | None]] = []
+        self.assets: list[str] = []
         self.schemas: list[dict] = []
         self.in_title = False
         self.in_schema = False
@@ -43,6 +44,10 @@ class Links(HTMLParser):
             self.descriptions.append(attributes.get("content") or "")
         if tag == "img":
             self.images.append((attributes.get("src") or "", attributes.get("alt")))
+        if tag == "link" and attributes.get("rel") in {"stylesheet", "icon", "apple-touch-icon"} and attributes.get("href"):
+            self.assets.append(attributes["href"] or "")
+        if tag == "script" and attributes.get("src"):
+            self.assets.append(attributes["src"] or "")
         if tag == "script" and attributes.get("type") == "application/ld+json":
             self.in_schema = True
             self.schema_text = ""
@@ -100,6 +105,12 @@ def main() -> None:
                 errors.append(f"{relative}: image lacks alternative text")
             if src.startswith("/") and not (DIST / src.lstrip("/")).is_file():
                 errors.append(f"{relative}: missing image {src}")
+        for asset in parser.assets:
+            if not asset.startswith("/"):
+                continue
+            pathname = urlsplit(asset).path
+            if pathname.startswith("/") and not (DIST / pathname.lstrip("/")).is_file():
+                errors.append(f"{relative}: missing asset {asset}")
         needs_schema = path == "/" or (path.startswith("/campaigns/") and path != "/campaigns/") or (path.startswith("/guides/") and path != "/guides/")
         if any(schema.get("invalid") for schema in parser.schemas) or (needs_schema and not parser.schemas):
             errors.append(f"{relative}: missing or invalid structured data")

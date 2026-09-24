@@ -272,10 +272,11 @@ def document(title: str, description: str, path: str, body: str, *, schema: dict
 
 
 def article_card(article: dict, index: int) -> str:
-    artwork = (f'<div class="card-art card-art-image"><img src="{e(article["hero_image"])}" alt="" loading="lazy" width="1200" height="675"></div>'
+    search_text = " ".join(str(article.get(key, "")) for key in ("brand", "title", "dek", "category", "kind", "market")).casefold()
+    artwork = (f'<div class="card-art card-art-image"><img src="{e(article["hero_image"])}" alt="{e(article["hero_alt"])}" loading="lazy" width="1200" height="675"></div>'
                if article.get("hero_image") else
                f'<div class="card-art card-art-{index % 3}" aria-hidden="true"><span>{e(article["brand"][:1].upper())}</span><i></i></div>')
-    return f'''<a class="story-card" href="{href(article)}">
+    return f'''<a class="story-card" href="{href(article)}" data-kind="{e(article['kind'].strip().casefold())}" data-search="{e(search_text)}">
       <div class="story-card-top"><span>{e(article['kind'])}</span><span>{index:02d}</span></div>
       {artwork}
       <div class="story-meta"><span>{e(article.get('market', article['category']))}</span><span>{e(article['published'])}</span></div>
@@ -288,7 +289,7 @@ def home_page(articles: list[dict]) -> str:
     latest = articles[0] if articles else None
     featured = ""
     if latest:
-        visual = (f'<div class="feature-visual feature-visual-image"><img src="{e(latest["hero_image"])}" alt="" fetchpriority="high" width="1200" height="675"><span class="feature-stamp">MKR / 001</span></div>'
+        visual = (f'<div class="feature-visual feature-visual-image"><img src="{e(latest["hero_image"])}" alt="{e(latest["hero_alt"])}" fetchpriority="high" width="1200" height="675"><span class="feature-stamp">MKR / 001</span></div>'
                   if latest.get("hero_image") else
                   f'<div class="feature-visual" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><span class="feature-initial">{e(latest["brand"][:1].upper())}</span><span class="feature-stamp">MKR / 001</span></div>')
         featured = f'''<section class="feature" aria-labelledby="feature-title">
@@ -383,7 +384,10 @@ def article_page(article: dict, related: list[dict]) -> str:
 
 def listing_page(title: str, subtitle: str, articles: list[dict], path: str, nav: str = "") -> str:
     cards = "".join(article_card(article, index + 1) for index, article in enumerate(articles))
-    body = f'''<section class="listing-head"><div class="section-label"><span>MKR / INDEX</span><span>{len(articles):02d} stories</span></div><h1>{e(title)}<span>.</span></h1><p>{e(subtitle)}</p></section><section class="listing-grid story-grid">{cards}</section>'''
+    kinds = sorted({article["kind"].strip().casefold() for article in articles})
+    filters = "".join(f'<button type="button" data-filter="{e(kind)}" aria-pressed="false">{e(kind.title())}</button>' for kind in kinds)
+    body = f'''<section class="listing-head"><div class="section-label"><span>MKR / INDEX</span><span>{len(articles):02d} stories</span></div><h1>{e(title)}<span>.</span></h1><p>{e(subtitle)}</p></section>
+    <section class="archive" aria-label="Browse {e(title.lower())}"><div class="archive-tools"><label for="story-search">Find a story<input id="story-search" type="search" placeholder="Search brand or topic" autocomplete="off"></label><div class="archive-filters" role="group" aria-label="Filter by story type"><button type="button" data-filter="all" aria-pressed="true">All stories</button>{filters}</div></div><p class="archive-count" id="archive-count" aria-live="polite">Showing {len(articles)} stories</p><div class="listing-grid story-grid">{cards}</div><p class="archive-empty" id="archive-empty" hidden>No matching stories. Try another brand or topic.</p></section><script defer src="{versioned_asset('archive.js')}"></script>'''
     return document(title, subtitle, path, body, nav=nav)
 
 

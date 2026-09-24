@@ -15,6 +15,10 @@
     box-sizing: border-box
 }
 
+[hidden] {
+    display: none !important
+}
+
 html {
     scroll-behavior: smooth
 }
@@ -777,6 +781,81 @@ input {
     padding: 0 4.1% 72px
 }
 
+.archive-tools {
+    margin: 0 4.1% 10px;
+    padding: 17px 0;
+    border-top: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+    display: none;
+    align-items: end;
+    justify-content: space-between;
+    gap: 18px 30px;
+    flex-wrap: wrap
+}
+
+.archive.is-ready .archive-tools {
+    display: flex
+}
+
+.archive-tools label {
+    display: block;
+    min-width: min(100%, 310px);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .1em;
+    text-transform: uppercase
+}
+
+.archive-tools input {
+    display: block;
+    width: 100%;
+    min-height: 44px;
+    margin-top: 8px;
+    padding: 9px 12px;
+    border: 1px solid var(--ink);
+    border-radius: 0;
+    background: var(--paper2);
+    color: var(--ink);
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: normal;
+    text-transform: none
+}
+
+.archive-filters {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap
+}
+
+.archive-filters button {
+    min-height: 44px;
+    padding: 9px 13px;
+    border: 1px solid var(--ink);
+    background: transparent;
+    color: var(--ink);
+    font-size: 11px;
+    font-weight: 800;
+    cursor: pointer
+}
+
+.archive-filters button[aria-pressed="true"] {
+    background: var(--dark);
+    color: var(--paper2)
+}
+
+.archive-count,
+.archive-empty {
+    margin: 0 4.1% 20px;
+    color: var(--muted);
+    font-size: 12px
+}
+
+.archive-empty {
+    padding: 40px 0 80px;
+    font-size: 18px
+}
+
 .text-page {
     padding: 45px 4.1% 96px
 }
@@ -1184,12 +1263,16 @@ input {
 
     .nav {
         margin: 19px 0 0;
-        justify-content: space-between;
-        gap: 9px
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 6px 16px
     }
 
     .nav a {
-        font-size: 10px
+        display: inline-flex;
+        align-items: center;
+        min-height: 44px;
+        font-size: 12px
     }
 
     .hero {
@@ -1378,6 +1461,20 @@ input {
 
     .listing-grid {
         padding: 0 5% 70px
+    }
+
+    .archive-tools {
+        margin: 0 5% 10px
+    }
+
+    .archive-tools label {
+        width: 100%
+    }
+
+    .archive-count,
+    .archive-empty {
+        margin-left: 5%;
+        margin-right: 5%
     }
 
     .text-lead {
