@@ -1,14 +1,14 @@
 # mkrting.com
 
-An India-first marketing and brand strategy journal, plus a local editorial discovery system. The public site is static and built for **Vercel**. A Linux laptop gathers public leads, groups duplicates, prepares evidence-led drafts with Gemini, and opens **draft GitHub pull requests**. A person checks and merges each article; Vercel builds and deploys the public frontend from `main`.
+An India-first marketing and brand strategy journal, plus a local editorial discovery system. The public site is static and built for **Vercel**. A Linux laptop gathers public leads and groups duplicates every two hours. Its [local editorial desk](docs/editor-dashboard.md) lets an editor research leads, create and review Gemini-assisted drafts, then merge a checked article PR. Vercel builds and deploys the public frontend from `main`.
 
 ## What is ready
 
 - Responsive homepage, article, campaign, guide, about, method and corrections pages. India and teardown hubs appear once each has enough distinct articles.
 - Five prelaunch analyses covering  Flipkart, Amazon, Jio and Zomato, plus a campaign-analysis worksheet. Each article includes primary evidence and independent reporting, source links, article and breadcrumb schema, canonical URLs, sitemap, robots.txt and RSS. See [launch story review](docs/launch-story-review.md) for the claim-by-claim editorial handoff.
-- A 14-endpoint source registry, with 10 RSS endpoints enabled for collection. It now includes Marketing Mind, afaqs!, Social Samosa, MediaNews4U, selected ET Brand Equity feeds, Marketing Dive and Design Week. Endpoint format was checked through the web research tool; live collection from this Linux workspace could not be tested because network name resolution is unavailable here. The collector records each feed's actual run status.
+- A 55-URL RSS/XML feed registry, with 30 feeds enabled after checking them on the Linux laptop. The wider editorial registry covers 97 sources and source types. A web content-type response alone does not prove a feed parses or yields useful leads; the collector records actual run status.
 - Instagram is optional. The 100-account file is a manual research watchlist, not a working feed or a launch dependency.
-- Local SQLite collection, relevance filter, duplicate grouping, source scoring, explicit primary-evidence gate, capped Gemini research/writing, local drafts, draft PR creation and Linux timer.
+- Local SQLite collection, relevance filter, duplicate grouping, source scoring, capped Gemini research/writing, local drafts, draft PR creation and an optional Linux timer. The editorial desk prefers original campaign material plus reporting and can also draft a clearly disclosed reported analysis from a substantive trade report.
 - Site build and link check on PR; Vercel preview deployments on branches and production deployment from `main` after the repository is connected.
 
 ## Start locally
@@ -32,7 +32,19 @@ python3 tools/engine.py usage
 
 The local database and drafts are in `.local/` and are ignored by Git. No key is needed to collect and shortlist. `feeds` shows the last runtime result for every enabled source. A listed endpoint is not counted as working until the laptop records a successful fetch and parse.
 
+To check the 43 held feed URLs on the connected laptop and enable only those that return usable, relevant RSS/Atom entries:
+
+```bash
+python3 tools/probe_feeds.py --activate
+python3 tools/engine.py collect
+python3 tools/engine.py feeds
+```
+
+The probe respects robots access, rejects cross-domain redirects, checks the response format and parses entries. Some candidates may remain held; 55 URLs in the registry does not mean 55 working feeds.
+
 ## Enable the editorial cycle
+
+Start with `python3 tools/backend_status.py`; the [backend setup guide](docs/backend-setup.md) explains each missing prerequisite and the first manual cycle.
 
 1. Copy `.env.example` to `.env`. Add a Gemini API key. Set a daily call/token cap you are comfortable with. Never commit `.env`. The article workflow starts with `gemini-3.8-flash`, falls back through the configured Flash models only when a model is unavailable or rate limited, and may use `gemini-3.5-flash-lite` for source research. It stops before exceeding the local call/token caps; the model list is not a promise of unlimited API usage. Check current per-project limits in Google AI Studio.
 2. Run `python3 tools/run_cycle.py` once and inspect the report. It collects feeds, optionally collects Meta posts, drafts at most three **eligible** stories per India calendar day, and optionally opens draft PRs.
@@ -55,7 +67,7 @@ To add a campaign seen on social media without an Instagram API, use the same co
 python3 tools/engine.py add --url 'https://www.instagram.com/p/EXAMPLE/' --title 'Brand campaign worth investigating' --source 'Manual social lead' --summary 'Potentially useful brand-positioning example; find official creative and independent reporting'
 ```
 
-The URL becomes a lead only. The system will hold drafting until a verified first-party campaign source and independent reporting are added to the same cluster.
+The URL becomes a lead only. The editorial desk requires enough readable reporting to draft; it labels single-source analysis clearly and requires a human review before publishing. The direct `engine.py draft` command keeps the stricter primary-plus-reporting gate.
 
 ## Publisher identity and reader contact
 

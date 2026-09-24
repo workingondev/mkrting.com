@@ -1,10 +1,10 @@
 [Unit]
-Description=Check marketing sources every four hours
+Description=Check marketing sources every two hours
 
 [Timer]
-OnCalendar=*-*-* 00,04,08,12,16,20:15:00
+OnCalendar=*-*-* 00/2:15:00
 Persistent=true
-RandomizedDelaySec=1200
+RandomizedDelaySec=300
 Unit=mkrting-cycle.service
 
 [Install]

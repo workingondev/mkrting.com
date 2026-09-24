@@ -97,9 +97,11 @@ def load_articles() -> list[dict]:
         for key in ("title", "seo_title", "seo_description", "reader_question", "dek", "kind", "category", "brand", "published", "updated", "sections", "sources", "lesson", "disclosure"):
             if not article.get(key):
                 raise ValueError(f"Missing {key} in {path}")
-        if len(article["sources"]) < 2:
-            raise ValueError(f"Article needs at least two source links: {path}")
+        if len(article["sources"]) < 1 or (len(article["sources"]) == 1 and "single-source" not in article["disclosure"].lower()):
+            raise ValueError(f"Single-source articles must clearly disclose their evidence basis: {path}")
         for source in article["sources"]:
+            if not isinstance(source, dict) or any(not isinstance(source.get(key), str) or not source[key].strip() for key in ("url", "label", "type")):
+                raise ValueError(f"Source needs a URL, label and type in {path}")
             safe_url(source["url"])
         if article.get("seo_title") and len(article["seo_title"]) > 120:
             raise ValueError(f"SEO title is too long in {path}")
@@ -271,9 +273,12 @@ def document(title: str, description: str, path: str, body: str, *, schema: dict
 
 
 def article_card(article: dict, index: int) -> str:
+    artwork = (f'<div class="card-art card-art-image"><img src="{e(article["hero_image"])}" alt="" loading="lazy" width="1200" height="675"></div>'
+               if article.get("hero_image") else
+               f'<div class="card-art card-art-{index % 3}" aria-hidden="true"><span>{e(article["brand"][:1].upper())}</span><i></i></div>')
     return f'''<a class="story-card" href="{href(article)}">
       <div class="story-card-top"><span>{e(article['kind'])}</span><span>{index:02d}</span></div>
-      <div class="card-art card-art-{index % 3}" aria-hidden="true"><span>{e(article['brand'][:1].upper())}</span><i></i></div>
+      {artwork}
       <div class="story-meta"><span>{e(article['category'])}</span><span>{e(article['published'])}</span></div>
       <h3>{e(article['title'])}</h3><p>{e(article['dek'])}</p>
       <span class="card-read">Read the analysis <span aria-hidden="true">↗</span></span>
@@ -284,9 +289,12 @@ def home_page(articles: list[dict]) -> str:
     latest = articles[0] if articles else None
     featured = ""
     if latest:
+        visual = (f'<div class="feature-visual feature-visual-image"><img src="{e(latest["hero_image"])}" alt="" fetchpriority="high" width="1200" height="675"><span class="feature-stamp">MKR / 001</span></div>'
+                  if latest.get("hero_image") else
+                  f'<div class="feature-visual" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><span class="feature-initial">{e(latest["brand"][:1].upper())}</span><span class="feature-stamp">MKR / 001</span></div>')
         featured = f'''<section class="feature" aria-labelledby="feature-title">
           <div class="section-label"><span>01 / Featured analysis</span><span>Fresh thinking, sourced</span></div>
-          <a class="feature-link" href="{href(latest)}"><div class="feature-visual" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><span class="feature-initial">{e(latest['brand'][:1].upper())}</span><span class="feature-stamp">MKR / 001</span></div>
+          <a class="feature-link" href="{href(latest)}">{visual}
             <div class="feature-copy"><span class="eyebrow">{e(latest['category'])} / {e(latest['kind'])}</span><h2 id="feature-title">{e(latest['title'])}</h2><p>{e(latest['dek'])}</p><div class="feature-lesson"><span>THE TAKEAWAY</span><strong>{e(latest['lesson'])}</strong></div><span class="round-arrow" aria-label="Read analysis">&#8599;</span></div></a>
         </section>'''
     recent = "".join(article_card(article, index + 1) for index, article in enumerate(articles[:6]))
@@ -449,9 +457,9 @@ def build() -> None:
     if "Teardowns" in ACTIVE_NAV:
         write("teardowns/index.html", listing_page("Teardowns", "Evidence-led campaign teardowns that explain the audience, creative mechanism and practical lesson.", teardowns, "/teardowns/", "Teardowns"))
     write("about/index.html", text_page("About us", "01 / ABOUT", "We study what brands make, and why people might care. Our starting point is India; our curiosity is global.", [
-        ("Our purpose", "mkrting.com is an independent publication for founders, marketers and designers who want to understand the strategy behind a campaign. Founded in 2026, we bring an evidence-first approach to Indian brand marketing: we verify the original creative, identify the audience insight, and explain the strategic choice in terms a smaller team can use."),
+        ("Our purpose", "mkrting.com is an independent publication for founders, marketers and designers who want to understand the strategy behind a campaign. Founded in 2026, we bring an evidence-first approach to Indian brand marketing: we seek out the original creative, identify the audience insight, and explain the strategic choice in terms a smaller team can use."),
         ("What we publish", "Original campaign teardowns, evidence-led brand strategy analyses and practical startup marketing playbooks. Coverage is not guaranteed to a brand or agency. We publish when a campaign offers a genuine idea and enough verified evidence to discuss it honestly and accurately."),
-        ("Our editorial standards", "Every article cites primary sources. Strategic readings are labelled as interpretation. Performance claims require verifiable measurement data, not publicity figures. AI assists research and drafting; a human editor reviews and approves every article before publication."),
+        ("Our editorial standards", "Every article cites the evidence used. Where only one trade report or its RSS summary is available, we disclose that limit plainly and require the editor to check the linked report. Strategic readings are labelled as interpretation. Performance claims require verifiable measurement data, not publicity figures. AI assists research and drafting; a human editor reviews and approves every article before publication."),
         ("How we use AI", "Automation helps us find leads, group duplicate stories, organise evidence and prepare drafts. The editorial decision — what to publish and what to hold — is made by a person. Source links, evidence limits and corrections remain visible on every article."),
         ("Corrections", "We review challenged facts against linked evidence and update confirmed errors. Material corrections are noted on the article, and its modification date is updated. Our corrections policy is available at /corrections/."),
         ("Ownership and contact", "mkrting.com is privately owned. Reach the publication at mkrtingindia@gmail.com or through our official LinkedIn company page. The Contact, Privacy and Terms pages explain how readers can reach us and use this site."),
@@ -459,7 +467,7 @@ def build() -> None:
     write("method/index.html", text_page("Our method", "02 / METHODOLOGY", "Every article starts with a question: what can a reader learn here that the announcement itself cannot explain?", [
         ("Find the original", "We look for the brand's campaign page, official creative, agency release or first-party material. Trade publications and social curators help discover stories and corroborate details. A curator's post is a lead, not a fact."),
         ("Separate fact from interpretation", "Dates, credits, product claims and performance figures need sources. Our analysis of the strategic idea is clearly labelled as interpretation. A view count is not proof of business impact. We record what the evidence establishes and what it cannot prove."),
-        ("The evidence gate", "A story is held until it has a verified primary source — the brand's own campaign material — and at least one independent report from a separate domain. This gate prevents analysis built entirely on press releases or social posts without corroboration."),
+        ("The evidence gate", "We prefer a verified brand campaign page alongside independent reporting. When the original page cannot be found, a substantive trade report can support a clearly attributed analysis. We disclose a single-source or RSS-summary basis, keep strategic interpretation separate from reported facts, and require human verification before publication. Stories with too little usable evidence are held."),
         ("Respect the work", "We link to original reporting and creative. Credit does not grant permission to republish an article or image; we use licensed material, permitted embeds or original mkrting.com artwork."),
         ("Correct openly", "When a material error is reported, we check the underlying evidence, update the article and mark its modification date. The corrections route is listed on every article."),
     ], "/method/"))

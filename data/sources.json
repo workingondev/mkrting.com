@@ -1,0 +1,1688 @@
+[
+  {
+    "id": "marketing-mind",
+    "name": "Marketing Mind",
+    "source_group": "marketing-mind",
+    "region": "India",
+    "roles": [
+      "discovery"
+    ],
+    "specialties": [],
+    "collector": "rss",
+    "url": "https://marketingmind.in/feed/",
+    "status": "active",
+    "content_ingestion": "metadata_only",
+    "evidence_class": "lead_only"
+  },
+  {
+    "id": "afaqs",
+    "name": "afaqs!",
+    "source_group": "afaqs",
+    "region": "India",
+    "roles": [
+      "discovery",
+      "independent_reporting"
+    ],
+    "specialties": [],
+    "collector": "rss",
+    "url": "https://www.afaqs.com/rss",
+    "status": "active",
+    "content_ingestion": "metadata_only",
+    "evidence_class": "lead_only"
+  },
+  {
+    "id": "social-samosa",
+    "name": "Social Samosa",
+    "source_group": "social-samosa",
+    "region": "India",
+    "roles": [
+      "discovery"
+    ],
+    "specialties": [],
+    "collector": "rss",
+    "url": "https://www.socialsamosa.com/rss",
+    "status": "active",
+    "content_ingestion": "metadata_only",
+    "evidence_class": "lead_only"
+  },
+  {
+    "id": "medianews4u",
+    "name": "MediaNews4U",
+    "source_group": "medianews4u",
+    "region": "India",
+    "roles": [
+      "discovery"
+    ],
+    "specialties": [],
+    "collector": "rss",
+    "url": "https://www.medianews4u.com/feed/",
+    "status": "active",
+    "content_ingestion": "metadata_only",
+    "evidence_class": "lead_only"
+  },
+  {
+    "id": "et-brand-equity-marketing",
+    "name": "ET Brand Equity: Marketing",
+    "source_group": "et-brand-equity",
+    "region": "India",
+    "roles": [
+      "discovery",
+      "independent_reporting"
+    ],
+    "specialties": [],
+    "collector": "rss",
+    "url": "https://brandequity.economictimes.indiatimes.com/rss/marketing",
+    "status": "active",
+    "content_ingestion": "metadata_only",
+    "evidence_class": "lead_only"
+  },
+  {
+    "id": "et-brand-equity-advertising",
+    "name": "ET Brand Equity: Advertising",
+    "source_group": "et-brand-equity",
+    "region": "India",
+    "roles": [
+      "discovery",
+      "independent_reporting"
+    ],
+    "specialties": [],
+    "collector": "rss",
+    "url": "https://brandequity.economictimes.indiatimes.com/rss/advertising",
+    "status": "active",
+    "content_ingestion": "metadata_only",
+    "evidence_class": "lead_only"
+  },
+  {
+    "id": "et-brand-equity-recent",
+    "name": "ET Brand Equity: Recent",
+    "source_group": "et-brand-equity",
+    "region": "India",
+    "roles": [
+      "discovery",
+      "independent_reporting"
+    ],
+    "specialties": [],
+    "collector": "rss",
+    "url": "https://brandequity.economictimes.indiatimes.com/rss/recentstories",
+    "status": "active",
+    "content_ingestion": "metadata_only",
+    "evidence_class": "lead_only"
+  },
+  {
+    "id": "et-brand-equity-media",
+    "name": "ET Brand Equity: Media",
+    "source_group": "et-brand-equity",
+    "region": "India",
+    "roles": [
+      "discovery",
+      "independent_reporting"
+    ],
+    "specialties": [],
+    "collector": "rss",
+    "url": "https://brandequity.economictimes.indiatimes.com/rss/media",
+    "status": "active",
+    "content_ingestion": "metadata_only",
+    "evidence_class": "lead_only"
+  },
+  {
+    "id": "et-brand-equity-digital",
+    "name": "ET Brand Equity: Digital",
+    "source_group": "et-brand-equity",
+    "region": "India",
+    "roles": [
+      "discovery",
+      "independent_reporting"
+    ],
+    "specialties": [],
+    "collector": "rss",
+    "url": "https://brandequity.economictimes.indiatimes.com/rss/digital",
+    "status": "active",
+    "content_ingestion": "metadata_only",
+    "evidence_class": "lead_only"
+  },
+  {
+    "id": "et-brand-equity-research",
+    "name": "ET Brand Equity: Research",
+    "source_group": "et-brand-equity",
+    "region": "India",
+    "roles": [
+      "discovery",
+      "independent_reporting"
+    ],
+    "specialties": [],
+    "collector": "rss",
+    "url": "https://brandequity.economictimes.indiatimes.com/rss/research",
+    "status": "active",
+    "content_ingestion": "metadata_only",
+    "evidence_class": "lead_only"
+  },
+  {
+    "id": "marketing-dive",
+    "name": "Marketing Dive",
+    "source_group": "marketing-dive",
+    "region": "Global",
+    "roles": [
+      "discovery",
+      "independent_reporting"
+    ],
+    "specialties": [],
+    "collector": "rss",
+    "url": "https://www.marketingdive.com/feeds/news/",
+    "status": "active",
+    "content_ingestion": "metadata_only",
+    "evidence_class": "lead_only"
+  },
+  {
+    "id": "design-week",
+    "name": "Design Week",
+    "source_group": "design-week",
+    "region": "Global",
+    "roles": [
+      "branding",
+      "creative_archive"
+    ],
+    "specialties": [],
+    "collector": "rss",
+    "url": "https://www.designweek.co.uk/feed/",
+    "status": "active",
+    "content_ingestion": "metadata_only",
+    "evidence_class": "lead_only"
+  },
+  {
+    "id": "yourstory",
+    "name": "YourStory",
+    "source_group": "yourstory",
+    "region": "India",
+    "roles": [
+      "discovery",
+      "startup"
+    ],
+    "specialties": [],
+    "collector": "rss",
+    "url": "https://yourstory.com/feed",
+    "status": "active",
+    "content_ingestion": "metadata_only",
+    "evidence_class": "lead_only"
+  },
+  {
+    "id": "techcrunch",
+    "name": "TechCrunch",
+    "source_group": "techcrunch",
+    "region": "Global",
+    "roles": [
+      "discovery",
+      "startup"
+    ],
+    "specialties": [],
+    "collector": "rss",
+    "url": "https://techcrunch.com/feed/",
+    "status": "active",
+    "content_ingestion": "metadata_only",
+    "evidence_class": "lead_only"
+  },
+  {
+    "id": "inc42-startups",
+    "name": "Inc42 Startups",
+    "source_group": "inc42-startups",
+    "region": "India",
+    "roles": [
+      "discovery",
+      "startup"
+    ],
+    "specialties": [],
+    "collector": "rss",
+    "url": "https://inc42.com/category/startups/feed/",
+    "status": "active",
+    "content_ingestion": "metadata_only",
+    "evidence_class": "lead_only"
+  },
+  {
+    "id": "adweek",
+    "name": "Adweek",
+    "source_group": "adweek",
+    "region": "Global",
+    "roles": [
+      "discovery",
+      "independent_reporting"
+    ],
+    "specialties": [],
+    "collector": "rss",
+    "url": "https://www.adweek.com/feed/",
+    "status": "needs_runtime_verification",
+    "content_ingestion": "metadata_only",
+    "evidence_class": "lead_only"
+  },
+  {
+    "id": "campaign-india",
+    "name": "Campaign India",
+    "source_group": "campaign-india",
+    "region": "India",
+    "roles": [
+      "discovery",
+      "independent_reporting"
+    ],
+    "specialties": [],
+    "collector": "rss",
+    "url": "https://www.campaignindia.in/rss/rss.ashx",
+    "status": "needs_runtime_verification",
+    "content_ingestion": "metadata_only",
+    "evidence_class": "lead_only"
+  },
+  {
+    "id": "agency-reporter",
+    "name": "Agency Reporter",
+    "source_group": "agency-reporter",
+    "region": "India",
+    "roles": [
+      "independent_reporting",
+      "adtech",
+      "distribution"
+    ],
+    "specialties": [
+      "programmatic",
+      "ctv"
+    ],
+    "collector": "rss",
+    "url": "https://agencyreporter.com/feed/",
+    "status": "active",
+    "content_ingestion": "metadata_only",
+    "evidence_class": "lead_only"
+  },
+  {
+    "id": "passionate-in-marketing",
+    "name": "Passionate in Marketing",
+    "source_group": "passionate-in-marketing",
+    "region": "India",
+    "roles": [
+      "discovery"
+    ],
+    "specialties": [
+      "campaigns",
+      "marketing"
+    ],
+    "collector": "rss",
+    "url": "https://www.passionateinmarketing.com/feed/",
+    "status": "needs_runtime_verification",
+    "content_ingestion": "metadata_only",
+    "evidence_class": "lead_only"
+  },
+  {
+    "id": "creative-boom",
+    "name": "Creative Boom",
+    "source_group": "creative-boom",
+    "region": "Global",
+    "roles": [
+      "branding",
+      "creative_archive"
+    ],
+    "specialties": [
+      "design",
+      "identity"
+    ],
+    "collector": "rss",
+    "url": "https://www.creativeboom.com/feed/",
+    "status": "active",
+    "content_ingestion": "metadata_only",
+    "evidence_class": "lead_only"
+  },
+  {
+    "id": "brandingmag",
+    "name": "Brandingmag",
+    "source_group": "brandingmag",
+    "region": "Global",
+    "roles": [
+      "branding",
+      "strategy"
+    ],
+    "specialties": [
+      "brand_strategy"
+    ],
+    "collector": "rss",
+    "url": "https://www.brandingmag.com/feed/",
+    "status": "active",
+    "content_ingestion": "metadata_only",
+    "evidence_class": "lead_only"
+  },
+  {
+    "id": "fast-company",
+    "name": "Fast Company",
+    "source_group": "fast-company",
+    "region": "Global",
+    "roles": [
+      "discovery",
+      "independent_reporting"
+    ],
+    "specialties": [],
+    "collector": "rss",
+    "url": "https://www.fastcompany.com/rss",
+    "status": "active",
+    "content_ingestion": "metadata_only",
+    "evidence_class": "lead_only"
+  },
+  {
+    "id": "adexchanger",
+    "name": "AdExchanger",
+    "source_group": "adexchanger",
+    "region": "Global",
+    "roles": [
+      "adtech",
+      "distribution"
+    ],
+    "specialties": [
+      "programmatic",
+      "retail_media"
+    ],
+    "collector": "rss",
+    "url": "https://www.adexchanger.com/feed/",
+    "status": "active",
+    "content_ingestion": "metadata_only",
+    "evidence_class": "lead_only"
+  },
+  {
+    "id": "social-media-today",
+    "name": "Social Media Today",
+    "source_group": "social-media-today",
+    "region": "Global",
+    "roles": [
+      "creator_social",
+      "distribution"
+    ],
+    "specialties": [
+      "social_platforms"
+    ],
+    "collector": "rss",
+    "url": "https://www.socialmediatoday.com/feeds/news/",
+    "status": "needs_runtime_verification",
+    "content_ingestion": "metadata_only",
+    "evidence_class": "lead_only"
+  },
+  {
+    "id": "digiday",
+    "name": "Digiday",
+    "source_group": "digiday",
+    "region": "Global",
+    "roles": [
+      "independent_reporting",
+      "distribution"
+    ],
+    "specialties": [
+      "digital_media"
+    ],
+    "collector": "rss",
+    "url": "https://digiday.com/feed/",
+    "status": "needs_runtime_verification",
+    "content_ingestion": "metadata_only",
+    "evidence_class": "lead_only"
+  },
+  {
+    "id": "creative-bloq",
+    "name": "Creative Bloq",
+    "source_group": "creative-bloq",
+    "region": "Global",
+    "roles": [
+      "branding",
+      "creative_archive"
+    ],
+    "specialties": [
+      "design",
+      "trends"
+    ],
+    "collector": "rss",
+    "url": "https://www.creativebloq.com/feeds.xml",
+    "status": "active",
+    "content_ingestion": "metadata_only",
+    "evidence_class": "lead_only"
+  },
+  {
+    "id": "packaging-of-the-world",
+    "name": "Packaging of the World",
+    "source_group": "packaging-of-the-world",
+    "region": "Global",
+    "roles": [
+      "creative_archive",
+      "branding"
+    ],
+    "specialties": [
+      "packaging"
+    ],
+    "collector": "rss",
+    "url": "https://packagingoftheworld.com/feed",
+    "status": "active",
+    "content_ingestion": "metadata_only",
+    "evidence_class": "lead_only"
+  },
+  {
+    "id": "tubefilter",
+    "name": "Tubefilter",
+    "source_group": "tubefilter",
+    "region": "Global",
+    "roles": [
+      "creator_social"
+    ],
+    "specialties": [
+      "youtube",
+      "creators"
+    ],
+    "collector": "rss",
+    "url": "https://www.tubefilter.com/feed/",
+    "status": "needs_runtime_verification",
+    "content_ingestion": "metadata_only",
+    "evidence_class": "lead_only"
+  },
+  {
+    "id": "sprout-social",
+    "name": "Sprout Social Insights",
+    "source_group": "sprout-social",
+    "region": "Global",
+    "roles": [
+      "creator_social",
+      "consumer_data"
+    ],
+    "specialties": [
+      "social_research"
+    ],
+    "collector": "rss",
+    "url": "https://sproutsocial.com/insights/feed/",
+    "status": "needs_runtime_verification",
+    "content_ingestion": "metadata_only",
+    "evidence_class": "lead_only"
+  },
+  {
+    "id": "hubspot-marketing",
+    "name": "HubSpot Marketing",
+    "source_group": "hubspot-marketing",
+    "region": "Global",
+    "roles": [
+      "discovery",
+      "independent_reporting"
+    ],
+    "specialties": [],
+    "collector": "rss",
+    "url": "https://blog.hubspot.com/marketing/rss.xml",
+    "status": "needs_runtime_verification",
+    "content_ingestion": "metadata_only",
+    "evidence_class": "lead_only"
+  },
+  {
+    "id": "ahrefs-blog",
+    "name": "Ahrefs Blog",
+    "source_group": "ahrefs-blog",
+    "region": "Global",
+    "roles": [
+      "discovery",
+      "independent_reporting"
+    ],
+    "specialties": [],
+    "collector": "rss",
+    "url": "https://ahrefs.com/blog/feed/",
+    "status": "needs_runtime_verification",
+    "content_ingestion": "metadata_only",
+    "evidence_class": "lead_only"
+  },
+  {
+    "id": "retail-dive",
+    "name": "Retail Dive",
+    "source_group": "retail-dive",
+    "region": "Global",
+    "roles": [
+      "discovery",
+      "independent_reporting"
+    ],
+    "specialties": [],
+    "collector": "rss",
+    "url": "https://www.retaildive.com/feeds/news/",
+    "status": "active",
+    "content_ingestion": "metadata_only",
+    "evidence_class": "lead_only"
+  },
+  {
+    "id": "grocery-dive",
+    "name": "Grocery Dive",
+    "source_group": "grocery-dive",
+    "region": "Global",
+    "roles": [
+      "discovery",
+      "independent_reporting"
+    ],
+    "specialties": [],
+    "collector": "rss",
+    "url": "https://www.grocerydive.com/feeds/news/",
+    "status": "needs_runtime_verification",
+    "content_ingestion": "metadata_only",
+    "evidence_class": "lead_only"
+  },
+  {
+    "id": "restaurant-dive",
+    "name": "Restaurant Dive",
+    "source_group": "restaurant-dive",
+    "region": "Global",
+    "roles": [
+      "discovery",
+      "independent_reporting"
+    ],
+    "specialties": [],
+    "collector": "rss",
+    "url": "https://www.restaurantdive.com/feeds/news/",
+    "status": "needs_runtime_verification",
+    "content_ingestion": "metadata_only",
+    "evidence_class": "lead_only"
+  },
+  {
+    "id": "retail-touchpoints",
+    "name": "Retail TouchPoints",
+    "source_group": "retail-touchpoints",
+    "region": "Global",
+    "roles": [
+      "discovery",
+      "independent_reporting"
+    ],
+    "specialties": [],
+    "collector": "rss",
+    "url": "https://www.retailtouchpoints.com/feed",
+    "status": "needs_runtime_verification",
+    "content_ingestion": "metadata_only",
+    "evidence_class": "lead_only"
+  },
+  {
+    "id": "eu-startups",
+    "name": "EU-Startups",
+    "source_group": "eu-startups",
+    "region": "Global",
+    "roles": [
+      "discovery",
+      "independent_reporting"
+    ],
+    "specialties": [],
+    "collector": "rss",
+    "url": "https://www.eu-startups.com/feed/",
+    "status": "needs_runtime_verification",
+    "content_ingestion": "metadata_only",
+    "evidence_class": "lead_only"
+  },
+  {
+    "id": "crunchbase-news",
+    "name": "Crunchbase News",
+    "source_group": "crunchbase-news",
+    "region": "Global",
+    "roles": [
+      "discovery",
+      "independent_reporting"
+    ],
+    "specialties": [],
+    "collector": "rss",
+    "url": "https://news.crunchbase.com/feed/",
+    "status": "active",
+    "content_ingestion": "metadata_only",
+    "evidence_class": "lead_only"
+  },
+  {
+    "id": "startuptalky",
+    "name": "StartupTalky",
+    "source_group": "startuptalky",
+    "region": "India",
+    "roles": [
+      "discovery",
+      "independent_reporting"
+    ],
+    "specialties": [],
+    "collector": "rss",
+    "url": "https://startuptalky.com/rss/",
+    "status": "needs_runtime_verification",
+    "content_ingestion": "metadata_only",
+    "evidence_class": "lead_only"
+  },
+  {
+    "id": "practical-ecommerce",
+    "name": "Practical Ecommerce",
+    "source_group": "practical-ecommerce",
+    "region": "Global",
+    "roles": [
+      "discovery",
+      "independent_reporting"
+    ],
+    "specialties": [],
+    "collector": "rss",
+    "url": "https://www.practicalecommerce.com/feed",
+    "status": "needs_runtime_verification",
+    "content_ingestion": "metadata_only",
+    "evidence_class": "lead_only"
+  },
+  {
+    "id": "total-retail",
+    "name": "Total Retail",
+    "source_group": "total-retail",
+    "region": "Global",
+    "roles": [
+      "discovery",
+      "independent_reporting"
+    ],
+    "specialties": [],
+    "collector": "rss",
+    "url": "https://www.mytotalretail.com/feed/",
+    "status": "needs_runtime_verification",
+    "content_ingestion": "metadata_only",
+    "evidence_class": "lead_only"
+  },
+  {
+    "id": "creative-review",
+    "name": "Creative Review",
+    "source_group": "creative-review",
+    "region": "Global",
+    "roles": [
+      "discovery",
+      "independent_reporting"
+    ],
+    "specialties": [],
+    "collector": "rss",
+    "url": "https://www.creativereview.co.uk/feed/",
+    "status": "active",
+    "content_ingestion": "metadata_only",
+    "evidence_class": "lead_only"
+  },
+  {
+    "id": "design-milk",
+    "name": "Design Milk",
+    "source_group": "design-milk",
+    "region": "Global",
+    "roles": [
+      "discovery",
+      "independent_reporting"
+    ],
+    "specialties": [],
+    "collector": "rss",
+    "url": "https://design-milk.com/feed/",
+    "status": "needs_runtime_verification",
+    "content_ingestion": "metadata_only",
+    "evidence_class": "lead_only"
+  },
+  {
+    "id": "logo-design-love",
+    "name": "Logo Design Love",
+    "source_group": "logo-design-love",
+    "region": "Global",
+    "roles": [
+      "discovery",
+      "independent_reporting"
+    ],
+    "specialties": [],
+    "collector": "rss",
+    "url": "https://www.logodesignlove.com/feed",
+    "status": "needs_runtime_verification",
+    "content_ingestion": "metadata_only",
+    "evidence_class": "lead_only"
+  },
+  {
+    "id": "marketing-mag-australia",
+    "name": "Marketing Mag Australia",
+    "source_group": "marketing-mag-australia",
+    "region": "Global",
+    "roles": [
+      "discovery",
+      "independent_reporting"
+    ],
+    "specialties": [],
+    "collector": "rss",
+    "url": "https://www.marketingmag.com.au/feed/",
+    "status": "needs_runtime_verification",
+    "content_ingestion": "metadata_only",
+    "evidence_class": "lead_only"
+  },
+  {
+    "id": "branding-in-asia",
+    "name": "Branding in Asia",
+    "source_group": "branding-in-asia",
+    "region": "Global",
+    "roles": [
+      "discovery",
+      "independent_reporting"
+    ],
+    "specialties": [],
+    "collector": "rss",
+    "url": "https://www.brandinginasia.com/feed/",
+    "status": "needs_runtime_verification",
+    "content_ingestion": "metadata_only",
+    "evidence_class": "lead_only"
+  },
+  {
+    "id": "adobo-magazine",
+    "name": "adobo Magazine",
+    "source_group": "adobo-magazine",
+    "region": "Global",
+    "roles": [
+      "discovery",
+      "independent_reporting"
+    ],
+    "specialties": [],
+    "collector": "rss",
+    "url": "https://www.adobomagazine.com/feed/",
+    "status": "needs_runtime_verification",
+    "content_ingestion": "metadata_only",
+    "evidence_class": "lead_only"
+  },
+  {
+    "id": "livemint-industry",
+    "name": "Mint: Industry",
+    "source_group": "livemint-industry",
+    "region": "India",
+    "roles": [
+      "discovery",
+      "independent_reporting"
+    ],
+    "specialties": [],
+    "collector": "rss",
+    "url": "https://www.livemint.com/rss/industry",
+    "status": "active",
+    "content_ingestion": "metadata_only",
+    "evidence_class": "lead_only"
+  },
+  {
+    "id": "business-standard-companies",
+    "name": "Business Standard: Companies",
+    "source_group": "business-standard-companies",
+    "region": "India",
+    "roles": [
+      "discovery",
+      "independent_reporting"
+    ],
+    "specialties": [],
+    "collector": "rss",
+    "url": "https://www.business-standard.com/rss/companies-101.rss",
+    "status": "needs_runtime_verification",
+    "content_ingestion": "metadata_only",
+    "evidence_class": "lead_only"
+  },
+  {
+    "id": "entrepreneur",
+    "name": "Entrepreneur",
+    "source_group": "entrepreneur",
+    "region": "Global",
+    "roles": [
+      "discovery",
+      "independent_reporting"
+    ],
+    "specialties": [],
+    "collector": "rss",
+    "url": "https://www.entrepreneur.com/latest.rss",
+    "status": "active",
+    "content_ingestion": "metadata_only",
+    "evidence_class": "lead_only"
+  },
+  {
+    "id": "print-magazine",
+    "name": "PRINT Magazine",
+    "source_group": "print-magazine",
+    "region": "Global",
+    "roles": [
+      "discovery",
+      "independent_reporting"
+    ],
+    "specialties": [],
+    "collector": "rss",
+    "url": "https://www.printmag.com/feed/",
+    "status": "active",
+    "content_ingestion": "metadata_only",
+    "evidence_class": "lead_only"
+  },
+  {
+    "id": "b2b-marketing",
+    "name": "B2B Marketing",
+    "source_group": "b2b-marketing",
+    "region": "Global",
+    "roles": [
+      "discovery",
+      "independent_reporting"
+    ],
+    "specialties": [],
+    "collector": "rss",
+    "url": "https://www.b2bmarketing.net/feed/",
+    "status": "needs_runtime_verification",
+    "content_ingestion": "metadata_only",
+    "evidence_class": "lead_only"
+  },
+  {
+    "id": "marketing-tech-news",
+    "name": "Marketing Tech News",
+    "source_group": "marketing-tech-news",
+    "region": "Global",
+    "roles": [
+      "discovery",
+      "independent_reporting"
+    ],
+    "specialties": [],
+    "collector": "rss",
+    "url": "https://www.marketingtechnews.net/feed/",
+    "status": "needs_runtime_verification",
+    "content_ingestion": "metadata_only",
+    "evidence_class": "lead_only"
+  },
+  {
+    "id": "ecommerce-times",
+    "name": "E-Commerce Times",
+    "source_group": "ecommerce-times",
+    "region": "Global",
+    "roles": [
+      "discovery",
+      "independent_reporting"
+    ],
+    "specialties": [],
+    "collector": "rss",
+    "url": "https://www.ecommercetimes.com/feed/",
+    "status": "active",
+    "content_ingestion": "metadata_only",
+    "evidence_class": "lead_only"
+  },
+  {
+    "id": "advertising-week",
+    "name": "Advertising Week",
+    "source_group": "advertising-week",
+    "region": "Global",
+    "roles": [
+      "discovery",
+      "independent_reporting"
+    ],
+    "specialties": [],
+    "collector": "rss",
+    "url": "https://advertisingweek.com/feed/",
+    "status": "active",
+    "content_ingestion": "metadata_only",
+    "evidence_class": "lead_only"
+  },
+  {
+    "id": "livemint-companies",
+    "name": "Mint: Companies",
+    "source_group": "livemint-companies",
+    "region": "India",
+    "roles": [
+      "discovery",
+      "independent_reporting"
+    ],
+    "specialties": [],
+    "collector": "rss",
+    "url": "https://www.livemint.com/rss/companies",
+    "status": "needs_runtime_verification",
+    "content_ingestion": "metadata_only",
+    "evidence_class": "lead_only"
+  },
+  {
+    "id": "exchange4media",
+    "name": "Exchange4media",
+    "source_group": "exchange4media",
+    "region": "India",
+    "roles": [
+      "independent_reporting",
+      "distribution"
+    ],
+    "specialties": [
+      "marketing",
+      "media"
+    ],
+    "collector": "search_monitor",
+    "url": null,
+    "status": "research_watchlist",
+    "content_ingestion": "none",
+    "evidence_class": "manual_review_required"
+  },
+  {
+    "id": "storyboard18",
+    "name": "Storyboard18",
+    "source_group": "storyboard18",
+    "region": "India",
+    "roles": [
+      "independent_reporting",
+      "strategy"
+    ],
+    "specialties": [
+      "brands",
+      "consumer"
+    ],
+    "collector": "search_monitor",
+    "url": null,
+    "status": "research_watchlist",
+    "content_ingestion": "none",
+    "evidence_class": "manual_review_required"
+  },
+  {
+    "id": "bestmediainfo",
+    "name": "BestMediaInfo",
+    "source_group": "bestmediainfo",
+    "region": "India",
+    "roles": [
+      "discovery",
+      "independent_reporting"
+    ],
+    "specialties": [
+      "advertising",
+      "media"
+    ],
+    "collector": "sitemap_diff",
+    "url": null,
+    "status": "research_watchlist",
+    "content_ingestion": "none",
+    "evidence_class": "manual_review_required"
+  },
+  {
+    "id": "impact",
+    "name": "IMPACT",
+    "source_group": "impact",
+    "region": "India",
+    "roles": [
+      "independent_reporting",
+      "strategy"
+    ],
+    "specialties": [
+      "interviews",
+      "creative"
+    ],
+    "collector": "search_monitor",
+    "url": null,
+    "status": "research_watchlist",
+    "content_ingestion": "none",
+    "evidence_class": "manual_review_required"
+  },
+  {
+    "id": "pitch",
+    "name": "Pitch",
+    "source_group": "pitch",
+    "region": "India",
+    "roles": [
+      "consumer_data",
+      "strategy"
+    ],
+    "specialties": [
+      "ad_spend",
+      "media_economics"
+    ],
+    "collector": "search_monitor",
+    "url": null,
+    "status": "research_watchlist",
+    "content_ingestion": "none",
+    "evidence_class": "manual_review_required"
+  },
+  {
+    "id": "mediabrief",
+    "name": "MediaBrief",
+    "source_group": "mediabrief",
+    "region": "India",
+    "roles": [
+      "discovery"
+    ],
+    "specialties": [
+      "campaigns",
+      "announcements"
+    ],
+    "collector": "sitemap_diff",
+    "url": null,
+    "status": "research_watchlist",
+    "content_ingestion": "none",
+    "evidence_class": "manual_review_required"
+  },
+  {
+    "id": "adgully",
+    "name": "Adgully",
+    "source_group": "adgully",
+    "region": "India",
+    "roles": [
+      "discovery"
+    ],
+    "specialties": [
+      "advertising",
+      "entertainment"
+    ],
+    "collector": "search_monitor",
+    "url": null,
+    "status": "research_watchlist",
+    "content_ingestion": "none",
+    "evidence_class": "manual_review_required"
+  },
+  {
+    "id": "buzzincontent",
+    "name": "BuzzInContent",
+    "source_group": "buzzincontent",
+    "region": "India",
+    "roles": [
+      "independent_reporting",
+      "creator_social"
+    ],
+    "specialties": [
+      "branded_content"
+    ],
+    "collector": "search_monitor",
+    "url": null,
+    "status": "research_watchlist",
+    "content_ingestion": "none",
+    "evidence_class": "manual_review_required"
+  },
+  {
+    "id": "social-ketchup",
+    "name": "Social Ketchup",
+    "source_group": "social-ketchup",
+    "region": "India",
+    "roles": [
+      "creator_social",
+      "discovery"
+    ],
+    "specialties": [
+      "influencers",
+      "social"
+    ],
+    "collector": "search_monitor",
+    "url": null,
+    "status": "research_watchlist",
+    "content_ingestion": "none",
+    "evidence_class": "manual_review_required"
+  },
+  {
+    "id": "creative-gaga",
+    "name": "Creative Gaga",
+    "source_group": "creative-gaga",
+    "region": "India",
+    "roles": [
+      "branding",
+      "creative_archive"
+    ],
+    "specialties": [
+      "identity",
+      "design"
+    ],
+    "collector": "search_monitor",
+    "url": null,
+    "status": "research_watchlist",
+    "content_ingestion": "none",
+    "evidence_class": "manual_review_required"
+  },
+  {
+    "id": "indiaretailing",
+    "name": "IndiaRetailing",
+    "source_group": "indiaretailing",
+    "region": "India",
+    "roles": [
+      "startup",
+      "consumer_data"
+    ],
+    "specialties": [
+      "retail",
+      "d2c"
+    ],
+    "collector": "search_monitor",
+    "url": null,
+    "status": "research_watchlist",
+    "content_ingestion": "none",
+    "evidence_class": "manual_review_required"
+  },
+  {
+    "id": "indiantelevision-com",
+    "name": "IndianTelevision.com",
+    "source_group": "indiantelevision-com",
+    "region": "India",
+    "roles": [
+      "independent_reporting",
+      "distribution"
+    ],
+    "specialties": [
+      "broadcast",
+      "media"
+    ],
+    "collector": "rss_candidate",
+    "url": null,
+    "status": "research_watchlist",
+    "content_ingestion": "none",
+    "evidence_class": "manual_review_required"
+  },
+  {
+    "id": "the-drum",
+    "name": "The Drum",
+    "source_group": "the-drum",
+    "region": "Global",
+    "roles": [
+      "independent_reporting",
+      "strategy"
+    ],
+    "specialties": [
+      "creative",
+      "agencies"
+    ],
+    "collector": "search_monitor",
+    "url": null,
+    "status": "research_watchlist",
+    "content_ingestion": "none",
+    "evidence_class": "manual_review_required"
+  },
+  {
+    "id": "campaign",
+    "name": "Campaign",
+    "source_group": "campaign",
+    "region": "Global",
+    "roles": [
+      "independent_reporting",
+      "strategy"
+    ],
+    "specialties": [
+      "creative",
+      "agencies"
+    ],
+    "collector": "manual_or_paid",
+    "url": null,
+    "status": "research_watchlist",
+    "content_ingestion": "none",
+    "evidence_class": "manual_review_required"
+  },
+  {
+    "id": "marketing-week",
+    "name": "Marketing Week",
+    "source_group": "marketing-week",
+    "region": "Global",
+    "roles": [
+      "strategy",
+      "effectiveness"
+    ],
+    "specialties": [
+      "marketing_strategy"
+    ],
+    "collector": "search_monitor",
+    "url": null,
+    "status": "research_watchlist",
+    "content_ingestion": "none",
+    "evidence_class": "manual_review_required"
+  },
+  {
+    "id": "little-black-book",
+    "name": "Little Black Book",
+    "source_group": "little-black-book",
+    "region": "Global",
+    "roles": [
+      "creative_archive",
+      "independent_reporting"
+    ],
+    "specialties": [
+      "campaign_credits",
+      "production"
+    ],
+    "collector": "database_monitor",
+    "url": null,
+    "status": "research_watchlist",
+    "content_ingestion": "none",
+    "evidence_class": "manual_review_required"
+  },
+  {
+    "id": "ads-of-the-world",
+    "name": "Ads of the World",
+    "source_group": "ads-of-the-world",
+    "region": "Global",
+    "roles": [
+      "creative_archive"
+    ],
+    "specialties": [
+      "campaign_credits",
+      "creative"
+    ],
+    "collector": "database_monitor",
+    "url": null,
+    "status": "research_watchlist",
+    "content_ingestion": "none",
+    "evidence_class": "manual_review_required"
+  },
+  {
+    "id": "warc",
+    "name": "WARC",
+    "source_group": "warc",
+    "region": "Global",
+    "roles": [
+      "effectiveness",
+      "research_archive"
+    ],
+    "specialties": [
+      "case_studies",
+      "marketing_data"
+    ],
+    "collector": "manual_or_paid",
+    "url": null,
+    "status": "research_watchlist",
+    "content_ingestion": "none",
+    "evidence_class": "manual_review_required"
+  },
+  {
+    "id": "contagious",
+    "name": "Contagious",
+    "source_group": "contagious",
+    "region": "Global",
+    "roles": [
+      "strategy",
+      "research_archive"
+    ],
+    "specialties": [
+      "creative_strategy"
+    ],
+    "collector": "manual_or_paid",
+    "url": null,
+    "status": "research_watchlist",
+    "content_ingestion": "none",
+    "evidence_class": "manual_review_required"
+  },
+  {
+    "id": "brand-new",
+    "name": "Brand New",
+    "source_group": "brand-new",
+    "region": "Global",
+    "roles": [
+      "branding",
+      "creative_archive"
+    ],
+    "specialties": [
+      "rebrands",
+      "identity"
+    ],
+    "collector": "manual_or_paid",
+    "url": null,
+    "status": "research_watchlist",
+    "content_ingestion": "none",
+    "evidence_class": "manual_review_required"
+  },
+  {
+    "id": "transform-magazine",
+    "name": "Transform Magazine",
+    "source_group": "transform-magazine",
+    "region": "Global",
+    "roles": [
+      "branding",
+      "strategy"
+    ],
+    "specialties": [
+      "rebrands",
+      "identity"
+    ],
+    "collector": "rss_candidate",
+    "url": null,
+    "status": "research_watchlist",
+    "content_ingestion": "none",
+    "evidence_class": "manual_review_required"
+  },
+  {
+    "id": "bp-o",
+    "name": "BP&O",
+    "source_group": "bp-o",
+    "region": "Global",
+    "roles": [
+      "branding",
+      "creative_archive"
+    ],
+    "specialties": [
+      "identity",
+      "packaging"
+    ],
+    "collector": "rss_candidate",
+    "url": null,
+    "status": "research_watchlist",
+    "content_ingestion": "none",
+    "evidence_class": "manual_review_required"
+  },
+  {
+    "id": "dieline",
+    "name": "DIELINE",
+    "source_group": "dieline",
+    "region": "Global",
+    "roles": [
+      "branding",
+      "creative_archive"
+    ],
+    "specialties": [
+      "packaging",
+      "identity"
+    ],
+    "collector": "rss_candidate",
+    "url": null,
+    "status": "research_watchlist",
+    "content_ingestion": "none",
+    "evidence_class": "manual_review_required"
+  },
+  {
+    "id": "it-s-nice-that",
+    "name": "It's Nice That",
+    "source_group": "it-s-nice-that",
+    "region": "Global",
+    "roles": [
+      "branding",
+      "creative_archive"
+    ],
+    "specialties": [
+      "design",
+      "inspiration"
+    ],
+    "collector": "rss_candidate",
+    "url": null,
+    "status": "research_watchlist",
+    "content_ingestion": "none",
+    "evidence_class": "manual_review_required"
+  },
+  {
+    "id": "fast-company-design",
+    "name": "Fast Company Design",
+    "source_group": "fast-company-design",
+    "region": "Global",
+    "roles": [
+      "branding",
+      "strategy"
+    ],
+    "specialties": [
+      "design",
+      "innovation"
+    ],
+    "collector": "rss_candidate",
+    "url": null,
+    "status": "research_watchlist",
+    "content_ingestion": "none",
+    "evidence_class": "manual_review_required"
+  },
+  {
+    "id": "the-brand-identity",
+    "name": "The Brand Identity",
+    "source_group": "the-brand-identity",
+    "region": "Global",
+    "roles": [
+      "branding",
+      "creative_archive"
+    ],
+    "specialties": [
+      "identity",
+      "design"
+    ],
+    "collector": "search_monitor",
+    "url": null,
+    "status": "research_watchlist",
+    "content_ingestion": "none",
+    "evidence_class": "manual_review_required"
+  },
+  {
+    "id": "search-engine-land",
+    "name": "Search Engine Land",
+    "source_group": "search-engine-land",
+    "region": "Global",
+    "roles": [
+      "distribution",
+      "strategy"
+    ],
+    "specialties": [
+      "search",
+      "seo"
+    ],
+    "collector": "rss_candidate",
+    "url": null,
+    "status": "research_watchlist",
+    "content_ingestion": "none",
+    "evidence_class": "manual_review_required"
+  },
+  {
+    "id": "martech",
+    "name": "MarTech",
+    "source_group": "martech",
+    "region": "Global",
+    "roles": [
+      "adtech",
+      "distribution"
+    ],
+    "specialties": [
+      "marketing_operations"
+    ],
+    "collector": "rss_candidate",
+    "url": null,
+    "status": "research_watchlist",
+    "content_ingestion": "none",
+    "evidence_class": "manual_review_required"
+  },
+  {
+    "id": "buffer",
+    "name": "Buffer",
+    "source_group": "buffer",
+    "region": "Global",
+    "roles": [
+      "creator_social",
+      "research_archive"
+    ],
+    "specialties": [
+      "social_data"
+    ],
+    "collector": "search_monitor",
+    "url": null,
+    "status": "research_watchlist",
+    "content_ingestion": "none",
+    "evidence_class": "manual_review_required"
+  },
+  {
+    "id": "later",
+    "name": "Later",
+    "source_group": "later",
+    "region": "Global",
+    "roles": [
+      "creator_social"
+    ],
+    "specialties": [
+      "instagram",
+      "tiktok"
+    ],
+    "collector": "search_monitor",
+    "url": null,
+    "status": "research_watchlist",
+    "content_ingestion": "none",
+    "evidence_class": "manual_review_required"
+  },
+  {
+    "id": "influencer-marketing-hub",
+    "name": "Influencer Marketing Hub",
+    "source_group": "influencer-marketing-hub",
+    "region": "Global",
+    "roles": [
+      "creator_social",
+      "research_archive"
+    ],
+    "specialties": [
+      "creator_economy"
+    ],
+    "collector": "search_monitor",
+    "url": null,
+    "status": "research_watchlist",
+    "content_ingestion": "none",
+    "evidence_class": "manual_review_required"
+  },
+  {
+    "id": "kyoorius-creative-awards",
+    "name": "Kyoorius Creative Awards",
+    "source_group": "kyoorius-creative-awards",
+    "region": "India",
+    "roles": [
+      "award_database",
+      "creative_archive"
+    ],
+    "specialties": [
+      "advertising",
+      "design"
+    ],
+    "collector": "database_monitor",
+    "url": null,
+    "status": "research_watchlist",
+    "content_ingestion": "none",
+    "evidence_class": "manual_review_required"
+  },
+  {
+    "id": "kyoorius-marketing-awards",
+    "name": "Kyoorius Marketing Awards",
+    "source_group": "kyoorius-marketing-awards",
+    "region": "India",
+    "roles": [
+      "award_database",
+      "effectiveness"
+    ],
+    "specialties": [
+      "strategy",
+      "effectiveness"
+    ],
+    "collector": "database_monitor",
+    "url": null,
+    "status": "research_watchlist",
+    "content_ingestion": "none",
+    "evidence_class": "manual_review_required"
+  },
+  {
+    "id": "abby-goafest",
+    "name": "ABBY / Goafest",
+    "source_group": "abby-goafest",
+    "region": "India",
+    "roles": [
+      "award_database",
+      "creative_archive"
+    ],
+    "specialties": [
+      "advertising",
+      "media"
+    ],
+    "collector": "database_monitor",
+    "url": null,
+    "status": "research_watchlist",
+    "content_ingestion": "none",
+    "evidence_class": "manual_review_required"
+  },
+  {
+    "id": "cannes-lions-the-work",
+    "name": "Cannes Lions / The Work",
+    "source_group": "cannes-lions-the-work",
+    "region": "Global",
+    "roles": [
+      "award_database",
+      "creative_archive"
+    ],
+    "specialties": [
+      "creative_awards"
+    ],
+    "collector": "manual_or_paid",
+    "url": null,
+    "status": "research_watchlist",
+    "content_ingestion": "none",
+    "evidence_class": "manual_review_required"
+  },
+  {
+    "id": "effie-awards",
+    "name": "Effie Awards",
+    "source_group": "effie-awards",
+    "region": "Global",
+    "roles": [
+      "award_database",
+      "effectiveness"
+    ],
+    "specialties": [
+      "marketing_effectiveness"
+    ],
+    "collector": "database_monitor",
+    "url": null,
+    "status": "research_watchlist",
+    "content_ingestion": "none",
+    "evidence_class": "manual_review_required"
+  },
+  {
+    "id": "d-ad-awards",
+    "name": "D&AD Awards",
+    "source_group": "d-ad-awards",
+    "region": "Global",
+    "roles": [
+      "award_database",
+      "creative_archive"
+    ],
+    "specialties": [
+      "design",
+      "advertising"
+    ],
+    "collector": "database_monitor",
+    "url": null,
+    "status": "research_watchlist",
+    "content_ingestion": "none",
+    "evidence_class": "manual_review_required"
+  },
+  {
+    "id": "clio-awards",
+    "name": "Clio Awards",
+    "source_group": "clio-awards",
+    "region": "Global",
+    "roles": [
+      "award_database",
+      "creative_archive"
+    ],
+    "specialties": [
+      "advertising",
+      "design"
+    ],
+    "collector": "database_monitor",
+    "url": null,
+    "status": "research_watchlist",
+    "content_ingestion": "none",
+    "evidence_class": "manual_review_required"
+  },
+  {
+    "id": "the-one-show",
+    "name": "The One Show",
+    "source_group": "the-one-show",
+    "region": "Global",
+    "roles": [
+      "award_database",
+      "creative_archive"
+    ],
+    "specialties": [
+      "advertising",
+      "design"
+    ],
+    "collector": "database_monitor",
+    "url": null,
+    "status": "research_watchlist",
+    "content_ingestion": "none",
+    "evidence_class": "manual_review_required"
+  },
+  {
+    "id": "official-brand-newsroom",
+    "name": "Official brand newsroom",
+    "source_group": "official-brand-newsroom",
+    "region": "Global",
+    "roles": [
+      "primary_evidence"
+    ],
+    "specialties": [
+      "brand_claims",
+      "launches"
+    ],
+    "collector": "manual_or_paid",
+    "url": null,
+    "status": "research_watchlist",
+    "content_ingestion": "none",
+    "evidence_class": "manual_review_required"
+  },
+  {
+    "id": "official-agency-case-study",
+    "name": "Official agency case study",
+    "source_group": "official-agency-case-study",
+    "region": "Global",
+    "roles": [
+      "primary_evidence"
+    ],
+    "specialties": [
+      "creative_credits",
+      "campaign_assets"
+    ],
+    "collector": "manual_or_paid",
+    "url": null,
+    "status": "research_watchlist",
+    "content_ingestion": "none",
+    "evidence_class": "manual_review_required"
+  },
+  {
+    "id": "official-brand-youtube",
+    "name": "Official brand YouTube",
+    "source_group": "official-brand-youtube",
+    "region": "Global",
+    "roles": [
+      "primary_evidence"
+    ],
+    "specialties": [
+      "campaign_films"
+    ],
+    "collector": "youtube_channel_rss",
+    "url": null,
+    "status": "research_watchlist",
+    "content_ingestion": "none",
+    "evidence_class": "manual_review_required"
+  }
+]

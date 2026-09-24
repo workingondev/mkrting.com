@@ -298,6 +298,27 @@ input {
     width: 140%
 }
 
+.feature-visual-image {
+    background: #e9f5f8;
+    padding: 18px
+}
+
+.feature-visual-image:before,
+.feature-visual-image:after {
+    display: none
+}
+
+.feature-visual-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain
+}
+
+.feature-visual-image .feature-stamp {
+    background: var(--paper2)
+}
+
 .orbit {
     position: absolute;
     border: 2px solid var(--ink);
@@ -501,6 +522,18 @@ input {
     border: 2px solid var(--ink);
     border-radius: 50%;
     transform: rotate(35deg)
+}
+
+.card-art-image {
+    background: #e9f5f8;
+    padding: 12px
+}
+
+.card-art-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain
 }
 
 .card-art-2 {

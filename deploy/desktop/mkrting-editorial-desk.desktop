@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=mkrting Editorial Desk
+Comment=Find stories, create AI drafts and review article PRs
+Exec=/usr/bin/python3 /data/workingon.dev/mkrting.com/tools/launch_dashboard.py
+Icon=/data/workingon.dev/mkrting.com/site/assets/favicon-64.png
+Terminal=false
+Categories=Office;Network;
+StartupNotify=true
