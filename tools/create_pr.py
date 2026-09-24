@@ -15,7 +15,7 @@ import urllib.parse
 import urllib.request
 from pathlib import Path
 
-from engine import ROOT, validate_draft, validate_research
+from engine import ROOT, validate_saved_draft
 
 
 class GitHub:
@@ -49,37 +49,13 @@ def create_pr(draft_path: Path) -> str:
     if payload.get("pr_url"):
         return payload["pr_url"]
     article = payload["article"]
-    evidence = set(payload.get("evidence_urls", []))
-    errors = validate_draft(article, evidence, set(payload.get("primary_urls", [])))
-    errors.extend(validate_research(payload.get("research", {}), evidence))
+    errors = validate_saved_draft(payload)
     if errors:
         raise RuntimeError("Draft failed final validation: " + "; ".join(errors))
     slug = article["slug"]
     relative = f"content/articles/{slug}.json"
     if (ROOT / relative).exists():
         raise RuntimeError(f"Article already exists locally: {relative}")
-    api = GitHub(owner, repo, token)
-    if api.call("GET", f"/contents/{relative}?ref={urllib.parse.quote(base)}", missing_ok=True):
-        raise RuntimeError(f"Article already exists on {base}: {relative}")
-    article_json = json.dumps(article, ensure_ascii=False, indent=2) + "\n"
-    suffix = hashlib.sha256(article_json.encode()).hexdigest()[:10]
-    branch = f"articles/{slug}-{suffix}"
-    encoded_branch = urllib.parse.quote(branch, safe="")
-    branch_ref = api.call("GET", f"/git/ref/heads/{encoded_branch}", missing_ok=True)
-    if branch_ref:
-        existing = api.call("GET", f"/pulls?state=open&head={urllib.parse.quote(owner + ':' + branch)}")
-        if existing:
-            payload["pr_url"] = existing[0]["html_url"]
-            payload["pr_number"] = existing[0]["number"]
-            draft_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-            return payload["pr_url"]
-    else:
-        base_ref = api.call("GET", f"/git/ref/heads/{urllib.parse.quote(base, safe='')}")
-        base_sha = base_ref["object"]["sha"]
-        base_commit = api.call("GET", f"/git/commits/{base_sha}")
-        tree = api.call("POST", "/git/trees", {"base_tree": base_commit["tree"]["sha"], "tree": [{"path": relative, "mode": "100644", "type": "blob", "content": article_json}]})
-        commit = api.call("POST", "/git/commits", {"message": f"Add campaign analysis: {article['title']}", "tree": tree["sha"], "parents": [base_sha]})
-        api.call("POST", "/git/refs", {"ref": f"refs/heads/{branch}", "sha": commit["sha"]})
     sources = "\n".join(f"- [{item['label']}]({item['url']}) ({item['type']})" for item in article["sources"])
     research = payload["research"]
     claims = "\n".join(f"- **{claim['fact']}** — [{claim['source_url']}]({claim['source_url']}) ({claim['confidence']})" for claim in research["claims"])
@@ -94,6 +70,7 @@ def create_pr(draft_path: Path) -> str:
 **Reader question:** {article['reader_question']}  
 **Search title:** {article['seo_title']}  
 **Startup lesson:** {article['lesson']}
+**Evidence basis:** {('One attributed trade publication RSS summary; full report was not machine-readable' if payload.get('source_access') == 'rss_summary_only' else 'One attributed trade report; no official campaign page verified') if payload.get('evidence_policy') == 'reported_analysis' else 'Official campaign page and independent reporting'}
 
 ## Evidence
 
@@ -123,6 +100,28 @@ def create_pr(draft_path: Path) -> str:
 
 AI-assisted draft. Human merge required. Merging builds the public site.
 """
+    api = GitHub(owner, repo, token)
+    if api.call("GET", f"/contents/{relative}?ref={urllib.parse.quote(base)}", missing_ok=True):
+        raise RuntimeError(f"Article already exists on {base}: {relative}")
+    article_json = json.dumps(article, ensure_ascii=False, indent=2) + "\n"
+    suffix = hashlib.sha256(article_json.encode()).hexdigest()[:10]
+    branch = f"articles/{slug}-{suffix}"
+    encoded_branch = urllib.parse.quote(branch, safe="")
+    branch_ref = api.call("GET", f"/git/ref/heads/{encoded_branch}", missing_ok=True)
+    if branch_ref:
+        existing = api.call("GET", f"/pulls?state=open&head={urllib.parse.quote(owner + ':' + branch)}")
+        if existing:
+            payload["pr_url"] = existing[0]["html_url"]
+            payload["pr_number"] = existing[0]["number"]
+            draft_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+            return payload["pr_url"]
+    else:
+        base_ref = api.call("GET", f"/git/ref/heads/{urllib.parse.quote(base, safe='')}")
+        base_sha = base_ref["object"]["sha"]
+        base_commit = api.call("GET", f"/git/commits/{base_sha}")
+        tree = api.call("POST", "/git/trees", {"base_tree": base_commit["tree"]["sha"], "tree": [{"path": relative, "mode": "100644", "type": "blob", "content": article_json}]})
+        commit = api.call("POST", "/git/commits", {"message": f"Add campaign analysis: {article['title']}", "tree": tree["sha"], "parents": [base_sha]})
+        api.call("POST", "/git/refs", {"ref": f"refs/heads/{branch}", "sha": commit["sha"]})
     pr = api.call("POST", "/pulls", {"title": f"Editorial review: {article['title']}", "head": branch, "base": base, "body": body, "draft": True})
     payload["pr_url"] = pr["html_url"]
     payload["pr_number"] = pr["number"]

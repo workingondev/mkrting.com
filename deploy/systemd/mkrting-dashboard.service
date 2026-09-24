@@ -1,0 +1,16 @@
+[Unit]
+Description=mkrting.com private local editorial dashboard
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=__PROJECT_DIR__
+EnvironmentFile=-__PROJECT_DIR__/.env
+ExecStart=__PYTHON__ __PROJECT_DIR__/tools/editor_dashboard.py
+Restart=on-failure
+RestartSec=5
+NoNewPrivileges=yes
+PrivateTmp=yes
+
+[Install]
+WantedBy=default.target

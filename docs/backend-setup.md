@@ -1,0 +1,61 @@
+# Local publishing backend: setup and daily operation
+
+The public Vercel site serves static HTML. This backend runs on the Linux laptop. It collects public RSS leads, stores them in `.local/mkrting.db`, prepares source-checked AI drafts, and opens **draft** GitHub pull requests. Publication happens only after a person reviews and merges a PR into `main`.
+
+## 1. Check current readiness
+
+From the project folder:
+
+```bash
+python3 tools/backend_status.py
+python3 tools/engine.py feeds
+python3 tools/engine.py shortlist
+```
+
+The status command prints only whether credentials are configured; it never prints their values. An enabled RSS entry is useful only after a successful runtime fetch. A `skipped` feed has a reason in `feeds` output. Run these commands on the laptop with an ordinary internet connection; this workspace's restricted network can make robots checks report `URLError`.
+
+## 2. Add private credentials on the laptop
+
+Edit the existing `.env` file locally. Set `GEMINI_API_KEY` to the key from your Google AI Studio project. Set `GITHUB_TOKEN` to a GitHub fine-grained token limited to this repository with **Contents: read and write**, **Pull requests: read and write**, and **Checks: read** for dashboard publishing. Confirm `GITHUB_OWNER`, `GITHUB_REPO`, and `GITHUB_BASE_BRANCH=main`. `.env` is ignored by Git and must stay on the laptop. The public site needs none of these keys in Vercel.
+
+Keep `MAX_GEMINI_CALLS_PER_DAY`, `MAX_GEMINI_TOKENS_PER_DAY`, and `MAX_DRAFTS_PER_DAY` conservative. The legacy command-line cycle has a daily draft ceiling of three; the local editorial desk drafts only when you click a lead. Actual Google model availability and quotas can change; a fallback is attempted only for an unavailable or rate-limited model and still counts against the local budget.
+
+`python3 tools/engine.py usage` shows the local limits, attempts, and a short token breakdown for recent Gemini responses. These are project safeguards, separate from the RPM, TPM, and RPD limits shown in Google AI Studio. The research step reads a bounded excerpt from each robots-permitted source page before contacting Gemini. If a primary page cannot be read, the draft is held. A publisher that blocks direct access contributes only its stored feed summary; an editor must check any claim attributed to it.
+
+For a single Flash Lite troubleshooting run, set `GEMINI_MODEL=gemini-3.5-flash-lite` and `GEMINI_FALLBACK_MODELS=gemini-3.5-flash-lite` in front of the command. `MAX_GEMINI_TOKENS_PER_DAY=0` temporarily disables the local token ceiling for that command; the local call ceiling and Google's quotas still apply. Avoid repeatedly retrying a held draft. A successful research ledger is cached for the same source text, so a later writing retry does not spend another research call.
+
+Meta credentials are optional. Without approved Meta API access, the Instagram watchlist remains a manual lead source. The RSS collector does not depend on Instagram.
+
+## 3. Establish one eligible story
+
+```bash
+python3 tools/engine.py shortlist
+```
+
+Choose a lead ID. Find the brand's or credited agency's original campaign page and check it actually documents that campaign. Add it to the lead as primary evidence:
+
+```bash
+python3 tools/engine.py add --cluster 12 --url 'https://brand.example/campaign' --title 'Official campaign page' --source 'Brand' --primary
+```
+
+Also add a separate publisher's reporting URL if the lead does not already have one. Do not mark a trade article or social curator post as primary. The collector does not make that judgment automatically. This source gate intentionally holds all unsupported leads; it is the reason a newly installed backend may produce zero drafts.
+
+When the shortlist shows `ready_for_draft: true`, open the [local editorial desk](editor-dashboard.md) and choose **Create article draft**. The AI draft and research ledger stay in `.local/drafts/`. Read both before publishing.
+
+## 4. Enable the recurring laptop job
+
+After one manual cycle works on the laptop:
+
+```bash
+python3 tools/install_timer.py
+systemctl --user status mkrting-cycle.timer
+journalctl --user -u mkrting-cycle.service -n 100 --no-pager
+```
+
+The timer checks every two hours and researches a small number of eligible stories. It does not draft or publish. Open the [local editorial desk](editor-dashboard.md) to select a lead, draft, review, and publish. The laptop must be powered on, awake, online, and running the user timer. If it must continue after logout, the machine administrator can enable lingering for the user. This background job does not run on Vercel.
+
+## 5. Daily editorial review
+
+Review new leads, verify original campaign evidence, and read each draft PR. Check every factual statement against its cited source, the original insight, credits, image rights, date, and reader value. Merge only articles that pass. Vercel then rebuilds the static site from `main`; sitemap and RSS are regenerated by the site builder.
+
+If the story queue has no evidence-ready leads, review the source trail and add exact official evidence. Use `python3 tools/backend_status.py` for feed health and configuration status.

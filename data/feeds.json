@@ -1,16 +1,552 @@
 [
-  {"id":"marketing-mind","name":"Marketing Mind","url":"https://marketingmind.in/feed/","region":"India","source_type":"trade_media","priority":"high","enabled":true,"proof":"Publisher RSS endpoint returned application/rss+xml in the 2026-09-23 web check"},
-  {"id":"afaqs","name":"afaqs!","url":"https://www.afaqs.com/rss","region":"India","source_type":"trade_media","priority":"high","enabled":true,"proof":"Publisher RSS endpoint returned application/xml in the 2026-09-23 web check"},
-  {"id":"social-samosa","name":"Social Samosa","url":"https://www.socialsamosa.com/rss","region":"India","source_type":"trade_media","priority":"high","enabled":true,"proof":"Publisher RSS endpoint returned application/xml in the 2026-09-23 web check"},
-  {"id":"medianews4u","name":"MediaNews4U","url":"https://www.medianews4u.com/feed/","region":"India","source_type":"trade_media","priority":"medium","enabled":true,"proof":"Publisher RSS endpoint returned application/rss+xml in the 2026-09-23 web check"},
-  {"id":"et-brand-equity-marketing","name":"ET Brand Equity: Marketing","url":"https://brandequity.economictimes.indiatimes.com/rss/marketing","region":"India","source_type":"trade_media","priority":"high","enabled":true,"proof":"Listed on publisher RSS directory; endpoint returned text/xml in the 2026-09-23 web check"},
-  {"id":"et-brand-equity-advertising","name":"ET Brand Equity: Advertising","url":"https://brandequity.economictimes.indiatimes.com/rss/advertising","region":"India","source_type":"trade_media","priority":"high","enabled":true,"proof":"Listed on publisher RSS directory; endpoint returned text/xml in the 2026-09-23 web check"},
-  {"id":"et-brand-equity-recent","name":"ET Brand Equity: Recent","url":"https://brandequity.economictimes.indiatimes.com/rss/recentstories","region":"India","source_type":"trade_media","priority":"medium","enabled":true,"proof":"Listed on publisher RSS directory; endpoint returned text/xml in the 2026-09-23 web check"},
-  {"id":"et-brand-equity-media","name":"ET Brand Equity: Media","url":"https://brandequity.economictimes.indiatimes.com/rss/media","region":"India","source_type":"trade_media","priority":"medium","enabled":true,"proof":"Listed on publisher RSS directory; endpoint returned text/xml in the 2026-09-23 web check"},
-  {"id":"et-brand-equity-digital","name":"ET Brand Equity: Digital","url":"https://brandequity.economictimes.indiatimes.com/rss/digital","region":"India","source_type":"trade_media","priority":"medium","enabled":false,"proof":"Listed on publisher RSS directory; runtime fetch still needs checking"},
-  {"id":"et-brand-equity-research","name":"ET Brand Equity: Research","url":"https://brandequity.economictimes.indiatimes.com/rss/research","region":"India","source_type":"trade_media","priority":"medium","enabled":false,"proof":"Listed on publisher RSS directory; runtime fetch still needs checking"},
-  {"id":"marketing-dive","name":"Marketing Dive","url":"https://www.marketingdive.com/feeds/news/","region":"Global","source_type":"trade_media","priority":"medium","enabled":true,"proof":"Publisher RSS endpoint returned application/rss+xml in the 2026-09-23 web check"},
-  {"id":"design-week","name":"Design Week","url":"https://www.designweek.co.uk/feed/","region":"Global","source_type":"trade_media","priority":"medium","enabled":true,"proof":"Publisher RSS endpoint returned application/rss+xml in the 2026-09-23 web check"},
-  {"id":"adweek","name":"Adweek","url":"https://www.adweek.com/feed/","region":"Global","source_type":"trade_media","priority":"medium","enabled":false,"proof":"Redirected to a different collection service in the 2026-09-23 web check; keep disabled pending permitted runtime test"},
-  {"id":"campaign-india","name":"Campaign India","url":"https://www.campaignindia.in/rss/rss.ashx","region":"India","source_type":"trade_media","priority":"high","enabled":false,"proof":"Publisher lists an RSS endpoint but the 2026-09-23 web check returned access restrictions; monitor manually"}
+  {
+    "id": "marketing-mind",
+    "name": "Marketing Mind",
+    "url": "https://marketingmind.in/feed/",
+    "region": "India",
+    "source_type": "trade_media",
+    "priority": "high",
+    "enabled": true,
+    "proof": "Publisher RSS endpoint returned application/rss+xml in the 2026-09-23 web check"
+  },
+  {
+    "id": "afaqs",
+    "name": "afaqs!",
+    "url": "https://www.afaqs.com/rss",
+    "region": "India",
+    "source_type": "trade_media",
+    "priority": "high",
+    "enabled": true,
+    "proof": "Publisher RSS endpoint returned application/xml in the 2026-09-23 web check"
+  },
+  {
+    "id": "social-samosa",
+    "name": "Social Samosa",
+    "url": "https://www.socialsamosa.com/rss",
+    "region": "India",
+    "source_type": "trade_media",
+    "priority": "high",
+    "enabled": true,
+    "proof": "Publisher RSS endpoint returned application/xml in the 2026-09-23 web check"
+  },
+  {
+    "id": "medianews4u",
+    "name": "MediaNews4U",
+    "url": "https://www.medianews4u.com/feed/",
+    "region": "India",
+    "source_type": "trade_media",
+    "priority": "medium",
+    "enabled": true,
+    "proof": "Publisher RSS endpoint returned application/rss+xml in the 2026-09-23 web check"
+  },
+  {
+    "id": "et-brand-equity-marketing",
+    "name": "ET Brand Equity: Marketing",
+    "url": "https://brandequity.economictimes.indiatimes.com/rss/marketing",
+    "region": "India",
+    "source_type": "trade_media",
+    "priority": "high",
+    "enabled": true,
+    "proof": "Listed on publisher RSS directory; endpoint returned text/xml in the 2026-09-23 web check"
+  },
+  {
+    "id": "et-brand-equity-advertising",
+    "name": "ET Brand Equity: Advertising",
+    "url": "https://brandequity.economictimes.indiatimes.com/rss/advertising",
+    "region": "India",
+    "source_type": "trade_media",
+    "priority": "high",
+    "enabled": true,
+    "proof": "Listed on publisher RSS directory; endpoint returned text/xml in the 2026-09-23 web check"
+  },
+  {
+    "id": "et-brand-equity-recent",
+    "name": "ET Brand Equity: Recent",
+    "url": "https://brandequity.economictimes.indiatimes.com/rss/recentstories",
+    "region": "India",
+    "source_type": "trade_media",
+    "priority": "medium",
+    "enabled": true,
+    "proof": "Listed on publisher RSS directory; endpoint returned text/xml in the 2026-09-23 web check"
+  },
+  {
+    "id": "et-brand-equity-media",
+    "name": "ET Brand Equity: Media",
+    "url": "https://brandequity.economictimes.indiatimes.com/rss/media",
+    "region": "India",
+    "source_type": "trade_media",
+    "priority": "medium",
+    "enabled": true,
+    "proof": "Listed on publisher RSS directory; endpoint returned text/xml in the 2026-09-23 web check"
+  },
+  {
+    "id": "et-brand-equity-digital",
+    "name": "ET Brand Equity: Digital",
+    "url": "https://brandequity.economictimes.indiatimes.com/rss/digital",
+    "region": "India",
+    "source_type": "trade_media",
+    "priority": "medium",
+    "enabled": true,
+    "proof": "Linux probe passed: 20 entries, 2 relevant; content type text/xml"
+  },
+  {
+    "id": "et-brand-equity-research",
+    "name": "ET Brand Equity: Research",
+    "url": "https://brandequity.economictimes.indiatimes.com/rss/research",
+    "region": "India",
+    "source_type": "trade_media",
+    "priority": "medium",
+    "enabled": true,
+    "proof": "Linux probe passed: 20 entries, 2 relevant; content type text/xml"
+  },
+  {
+    "id": "marketing-dive",
+    "name": "Marketing Dive",
+    "url": "https://www.marketingdive.com/feeds/news/",
+    "region": "Global",
+    "source_type": "trade_media",
+    "priority": "medium",
+    "enabled": true,
+    "proof": "Publisher RSS endpoint returned application/rss+xml in the 2026-09-23 web check"
+  },
+  {
+    "id": "design-week",
+    "name": "Design Week",
+    "url": "https://www.designweek.co.uk/feed/",
+    "region": "Global",
+    "source_type": "trade_media",
+    "priority": "medium",
+    "enabled": true,
+    "proof": "Publisher RSS endpoint returned application/rss+xml in the 2026-09-23 web check"
+  },
+  {
+    "id": "yourstory",
+    "name": "YourStory",
+    "url": "https://yourstory.com/feed",
+    "region": "India",
+    "source_type": "trade_media",
+    "priority": "high",
+    "enabled": true,
+    "proof": "Publisher feed URL returned application/rss+xml in the 2026-09-24 web check; runtime laptop collection still needs confirmation"
+  },
+  {
+    "id": "techcrunch",
+    "name": "TechCrunch",
+    "url": "https://techcrunch.com/feed/",
+    "region": "Global",
+    "source_type": "trade_media",
+    "priority": "medium",
+    "enabled": true,
+    "proof": "Publisher feed URL returned application/rss+xml in the 2026-09-24 web check; runtime laptop collection still needs confirmation"
+  },
+  {
+    "id": "inc42-startups",
+    "name": "Inc42 Startups",
+    "url": "https://inc42.com/category/startups/feed/",
+    "region": "India",
+    "source_type": "trade_media",
+    "priority": "high",
+    "enabled": true,
+    "proof": "Linux probe passed: 24 entries, 8 relevant; content type application/rss+xml"
+  },
+  {
+    "id": "adweek",
+    "name": "Adweek",
+    "url": "https://www.adweek.com/feed/",
+    "region": "Global",
+    "source_type": "trade_media",
+    "priority": "medium",
+    "enabled": false,
+    "proof": "Redirected to a different collection service in the 2026-09-23 web check; keep disabled pending permitted runtime test"
+  },
+  {
+    "id": "campaign-india",
+    "name": "Campaign India",
+    "url": "https://www.campaignindia.in/rss/rss.ashx",
+    "region": "India",
+    "source_type": "trade_media",
+    "priority": "high",
+    "enabled": false,
+    "proof": "Publisher lists an RSS endpoint but the 2026-09-23 web check returned access restrictions; monitor manually"
+  },
+  {
+    "id": "agency-reporter",
+    "name": "Agency Reporter",
+    "url": "https://agencyreporter.com/feed/",
+    "region": "India",
+    "source_type": "trade_media",
+    "priority": "high",
+    "enabled": true,
+    "proof": "Linux probe passed: 10 entries, 2 relevant; content type application/rss+xml"
+  },
+  {
+    "id": "passionate-in-marketing",
+    "name": "Passionate in Marketing",
+    "url": "https://www.passionateinmarketing.com/feed/",
+    "region": "India",
+    "source_type": "trade_media",
+    "priority": "medium",
+    "enabled": false,
+    "proof": "2026-09-24 web request returned an RSS or XML MIME type; Linux fetch, parse and editorial quality still need verification"
+  },
+  {
+    "id": "creative-boom",
+    "name": "Creative Boom",
+    "url": "https://www.creativeboom.com/feed/",
+    "region": "Global",
+    "source_type": "trade_media",
+    "priority": "medium",
+    "enabled": true,
+    "proof": "Linux probe passed: 20 entries, 1 relevant; content type application/rss+xml"
+  },
+  {
+    "id": "brandingmag",
+    "name": "Brandingmag",
+    "url": "https://www.brandingmag.com/feed/",
+    "region": "Global",
+    "source_type": "trade_media",
+    "priority": "medium",
+    "enabled": true,
+    "proof": "Linux probe passed: 20 entries, 3 relevant; content type application/rss+xml"
+  },
+  {
+    "id": "fast-company",
+    "name": "Fast Company",
+    "url": "https://www.fastcompany.com/rss",
+    "region": "Global",
+    "source_type": "trade_media",
+    "priority": "low",
+    "enabled": true,
+    "proof": "Linux probe passed: 19 entries, 1 relevant; content type application/rss+xml"
+  },
+  {
+    "id": "adexchanger",
+    "name": "AdExchanger",
+    "url": "https://www.adexchanger.com/feed/",
+    "region": "Global",
+    "source_type": "trade_media",
+    "priority": "medium",
+    "enabled": true,
+    "proof": "Linux probe passed: 10 entries, 1 relevant; content type application/rss+xml"
+  },
+  {
+    "id": "social-media-today",
+    "name": "Social Media Today",
+    "url": "https://www.socialmediatoday.com/feeds/news/",
+    "region": "Global",
+    "source_type": "trade_media",
+    "priority": "medium",
+    "enabled": false,
+    "proof": "2026-09-24 web request returned an RSS or XML MIME type; Linux fetch, parse and editorial quality still need verification"
+  },
+  {
+    "id": "digiday",
+    "name": "Digiday",
+    "url": "https://digiday.com/feed/",
+    "region": "Global",
+    "source_type": "trade_media",
+    "priority": "medium",
+    "enabled": false,
+    "proof": "2026-09-24 web request returned an RSS or XML MIME type; Linux fetch, parse and editorial quality still need verification"
+  },
+  {
+    "id": "creative-bloq",
+    "name": "Creative Bloq",
+    "url": "https://www.creativebloq.com/feeds.xml",
+    "region": "Global",
+    "source_type": "trade_media",
+    "priority": "medium",
+    "enabled": true,
+    "proof": "Linux probe passed: 25 entries, 2 relevant; content type application/xml"
+  },
+  {
+    "id": "packaging-of-the-world",
+    "name": "Packaging of the World",
+    "url": "https://packagingoftheworld.com/feed",
+    "region": "Global",
+    "source_type": "trade_media",
+    "priority": "medium",
+    "enabled": true,
+    "proof": "Linux probe passed: 10 entries, 2 relevant; content type application/rss+xml"
+  },
+  {
+    "id": "tubefilter",
+    "name": "Tubefilter",
+    "url": "https://www.tubefilter.com/feed/",
+    "region": "Global",
+    "source_type": "trade_media",
+    "priority": "medium",
+    "enabled": false,
+    "proof": "2026-09-24 web request returned an RSS or XML MIME type; Linux fetch, parse and editorial quality still need verification"
+  },
+  {
+    "id": "sprout-social",
+    "name": "Sprout Social Insights",
+    "url": "https://sproutsocial.com/insights/feed/",
+    "region": "Global",
+    "source_type": "trade_media",
+    "priority": "medium",
+    "enabled": false,
+    "proof": "2026-09-24 web request returned an RSS or XML MIME type; Linux fetch, parse and editorial quality still need verification"
+  },
+  {
+    "id": "hubspot-marketing",
+    "name": "HubSpot Marketing",
+    "url": "https://blog.hubspot.com/marketing/rss.xml",
+    "region": "Global",
+    "source_type": "trade_media",
+    "priority": "medium",
+    "enabled": false,
+    "proof": "2026-09-24 web request returned an RSS or XML MIME type; Linux fetch, parse and editorial quality still need verification"
+  },
+  {
+    "id": "ahrefs-blog",
+    "name": "Ahrefs Blog",
+    "url": "https://ahrefs.com/blog/feed/",
+    "region": "Global",
+    "source_type": "trade_media",
+    "priority": "medium",
+    "enabled": false,
+    "proof": "2026-09-24 web request returned an RSS or XML MIME type; Linux fetch, parse and editorial quality still need verification"
+  },
+  {
+    "id": "retail-dive",
+    "name": "Retail Dive",
+    "url": "https://www.retaildive.com/feeds/news/",
+    "region": "Global",
+    "source_type": "trade_media",
+    "priority": "medium",
+    "enabled": true,
+    "proof": "Linux probe passed: 10 entries, 1 relevant; content type application/rss+xml"
+  },
+  {
+    "id": "grocery-dive",
+    "name": "Grocery Dive",
+    "url": "https://www.grocerydive.com/feeds/news/",
+    "region": "Global",
+    "source_type": "trade_media",
+    "priority": "medium",
+    "enabled": false,
+    "proof": "2026-09-24 web request returned an RSS or XML MIME type; Linux fetch, parse and editorial quality still need verification"
+  },
+  {
+    "id": "restaurant-dive",
+    "name": "Restaurant Dive",
+    "url": "https://www.restaurantdive.com/feeds/news/",
+    "region": "Global",
+    "source_type": "trade_media",
+    "priority": "medium",
+    "enabled": false,
+    "proof": "2026-09-24 web request returned an RSS or XML MIME type; Linux fetch, parse and editorial quality still need verification"
+  },
+  {
+    "id": "retail-touchpoints",
+    "name": "Retail TouchPoints",
+    "url": "https://www.retailtouchpoints.com/feed",
+    "region": "Global",
+    "source_type": "trade_media",
+    "priority": "medium",
+    "enabled": false,
+    "proof": "2026-09-24 web request returned an RSS or XML MIME type; Linux fetch, parse and editorial quality still need verification"
+  },
+  {
+    "id": "eu-startups",
+    "name": "EU-Startups",
+    "url": "https://www.eu-startups.com/feed/",
+    "region": "Global",
+    "source_type": "trade_media",
+    "priority": "medium",
+    "enabled": false,
+    "proof": "2026-09-24 web request returned an RSS or XML MIME type; Linux fetch, parse and editorial quality still need verification"
+  },
+  {
+    "id": "crunchbase-news",
+    "name": "Crunchbase News",
+    "url": "https://news.crunchbase.com/feed/",
+    "region": "Global",
+    "source_type": "trade_media",
+    "priority": "medium",
+    "enabled": true,
+    "proof": "Linux probe passed: 10 entries, 5 relevant; content type application/rss+xml"
+  },
+  {
+    "id": "startuptalky",
+    "name": "StartupTalky",
+    "url": "https://startuptalky.com/rss/",
+    "region": "India",
+    "source_type": "trade_media",
+    "priority": "medium",
+    "enabled": false,
+    "proof": "2026-09-24 web request returned an RSS or XML MIME type; Linux fetch, parse and editorial quality still need verification"
+  },
+  {
+    "id": "practical-ecommerce",
+    "name": "Practical Ecommerce",
+    "url": "https://www.practicalecommerce.com/feed",
+    "region": "Global",
+    "source_type": "trade_media",
+    "priority": "medium",
+    "enabled": false,
+    "proof": "2026-09-24 web request returned an RSS or XML MIME type; Linux fetch, parse and editorial quality still need verification"
+  },
+  {
+    "id": "total-retail",
+    "name": "Total Retail",
+    "url": "https://www.mytotalretail.com/feed/",
+    "region": "Global",
+    "source_type": "trade_media",
+    "priority": "medium",
+    "enabled": false,
+    "proof": "2026-09-24 web request returned an RSS or XML MIME type; Linux fetch, parse and editorial quality still need verification"
+  },
+  {
+    "id": "creative-review",
+    "name": "Creative Review",
+    "url": "https://www.creativereview.co.uk/feed/",
+    "region": "Global",
+    "source_type": "trade_media",
+    "priority": "medium",
+    "enabled": true,
+    "proof": "Linux probe passed: 12 entries, 6 relevant; content type application/rss+xml"
+  },
+  {
+    "id": "design-milk",
+    "name": "Design Milk",
+    "url": "https://design-milk.com/feed/",
+    "region": "Global",
+    "source_type": "trade_media",
+    "priority": "low",
+    "enabled": false,
+    "proof": "2026-09-24 web request returned an RSS or XML MIME type; Linux fetch, parse and editorial quality still need verification"
+  },
+  {
+    "id": "logo-design-love",
+    "name": "Logo Design Love",
+    "url": "https://www.logodesignlove.com/feed",
+    "region": "Global",
+    "source_type": "trade_media",
+    "priority": "medium",
+    "enabled": false,
+    "proof": "2026-09-24 web request returned an RSS or XML MIME type; Linux fetch, parse and editorial quality still need verification"
+  },
+  {
+    "id": "marketing-mag-australia",
+    "name": "Marketing Mag Australia",
+    "url": "https://www.marketingmag.com.au/feed/",
+    "region": "Global",
+    "source_type": "trade_media",
+    "priority": "medium",
+    "enabled": false,
+    "proof": "2026-09-24 web request returned an RSS or XML MIME type; Linux fetch, parse and editorial quality still need verification"
+  },
+  {
+    "id": "branding-in-asia",
+    "name": "Branding in Asia",
+    "url": "https://www.brandinginasia.com/feed/",
+    "region": "Global",
+    "source_type": "trade_media",
+    "priority": "medium",
+    "enabled": false,
+    "proof": "2026-09-24 web request returned an RSS or XML MIME type; Linux fetch, parse and editorial quality still need verification"
+  },
+  {
+    "id": "adobo-magazine",
+    "name": "adobo Magazine",
+    "url": "https://www.adobomagazine.com/feed/",
+    "region": "Global",
+    "source_type": "trade_media",
+    "priority": "medium",
+    "enabled": false,
+    "proof": "2026-09-24 web request returned an RSS or XML MIME type; Linux fetch, parse and editorial quality still need verification"
+  },
+  {
+    "id": "livemint-industry",
+    "name": "Mint: Industry",
+    "url": "https://www.livemint.com/rss/industry",
+    "region": "India",
+    "source_type": "trade_media",
+    "priority": "low",
+    "enabled": true,
+    "proof": "Linux probe passed: 35 entries, 1 relevant; content type application/xml"
+  },
+  {
+    "id": "business-standard-companies",
+    "name": "Business Standard: Companies",
+    "url": "https://www.business-standard.com/rss/companies-101.rss",
+    "region": "India",
+    "source_type": "trade_media",
+    "priority": "low",
+    "enabled": false,
+    "proof": "2026-09-24 web request returned an RSS or XML MIME type; Linux fetch, parse and editorial quality still need verification"
+  },
+  {
+    "id": "entrepreneur",
+    "name": "Entrepreneur",
+    "url": "https://www.entrepreneur.com/latest.rss",
+    "region": "Global",
+    "source_type": "trade_media",
+    "priority": "medium",
+    "enabled": true,
+    "proof": "Linux probe passed: 10 entries, 1 relevant; content type application/rss+xml"
+  },
+  {
+    "id": "print-magazine",
+    "name": "PRINT Magazine",
+    "url": "https://www.printmag.com/feed/",
+    "region": "Global",
+    "source_type": "trade_media",
+    "priority": "medium",
+    "enabled": true,
+    "proof": "Linux probe passed: 40 entries, 1 relevant; content type application/rss+xml"
+  },
+  {
+    "id": "b2b-marketing",
+    "name": "B2B Marketing",
+    "url": "https://www.b2bmarketing.net/feed/",
+    "region": "Global",
+    "source_type": "trade_media",
+    "priority": "medium",
+    "enabled": false,
+    "proof": "2026-09-24 web request returned an RSS or XML MIME type; Linux fetch, parse and editorial quality still need verification"
+  },
+  {
+    "id": "marketing-tech-news",
+    "name": "Marketing Tech News",
+    "url": "https://www.marketingtechnews.net/feed/",
+    "region": "Global",
+    "source_type": "trade_media",
+    "priority": "medium",
+    "enabled": false,
+    "proof": "2026-09-24 web request returned an RSS or XML MIME type; Linux fetch, parse and editorial quality still need verification"
+  },
+  {
+    "id": "ecommerce-times",
+    "name": "E-Commerce Times",
+    "url": "https://www.ecommercetimes.com/feed/",
+    "region": "Global",
+    "source_type": "trade_media",
+    "priority": "medium",
+    "enabled": true,
+    "proof": "Linux probe passed: 10 entries, 1 relevant; content type text/xml"
+  },
+  {
+    "id": "advertising-week",
+    "name": "Advertising Week",
+    "url": "https://advertisingweek.com/feed/",
+    "region": "Global",
+    "source_type": "trade_media",
+    "priority": "medium",
+    "enabled": true,
+    "proof": "Linux probe passed: 20 entries, 8 relevant; content type application/rss+xml"
+  },
+  {
+    "id": "livemint-companies",
+    "name": "Mint: Companies",
+    "url": "https://www.livemint.com/rss/companies",
+    "region": "India",
+    "source_type": "trade_media",
+    "priority": "medium",
+    "enabled": false,
+    "proof": "2026-09-24 web request returned an RSS or XML MIME type; Linux fetch, parse and editorial quality still need verification"
+  }
 ]
