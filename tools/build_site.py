@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import html
+import hashlib
 import json
 import os
 import re
@@ -18,6 +19,12 @@ CONTENT = ROOT / "content" / "articles"
 GUIDES = ROOT / "content" / "guides"
 DIST = ROOT / "dist"
 ASSETS = ROOT / "site" / "assets"
+
+
+def versioned_asset(name: str) -> str:
+    """Change the URL when an immutable browser-cached asset changes."""
+    digest = hashlib.sha256((ASSETS / name).read_bytes()).hexdigest()[:12]
+    return f"/assets/{name}?v={digest}"
 # Vercel redirects www to the apex domain. Keep every generated search signal
 # on that same destination, even if a legacy Vercel SITE_URL still says www.
 CANONICAL_ORIGIN = "https://mkrting.com"
@@ -221,8 +228,8 @@ def document(title: str, description: str, path: str, body: str, *, schema: dict
   {author_meta}
   {author_link}<link rel="canonical" href="{e(url)}">
   {hreflang}
-  <link rel="icon" href="/assets/mkrting-favicon.png" type="image/png">
-  <link rel="apple-touch-icon" href="/assets/mkrting-favicon.png">
+  <link rel="icon" href="{versioned_asset('mkrting-favicon.png')}" type="image/png">
+  <link rel="apple-touch-icon" href="{versioned_asset('mkrting-favicon.png')}">
   <link rel="alternate" href="/rss.xml" type="application/rss+xml" title="mkrting.com articles">
   <meta property="og:type" content="{og_type}"><meta property="og:site_name" content="mkrting.com">
   <meta property="og:title" content="{e(title)}"><meta property="og:description" content="{e(description)}">
@@ -232,7 +239,7 @@ def document(title: str, description: str, path: str, body: str, *, schema: dict
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap">
-  <link rel="stylesheet" href="/assets/style.css">
+  <link rel="stylesheet" href="{versioned_asset('style.css')}">
   {schema_html}
   {observability}
 </head>
